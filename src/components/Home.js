@@ -32,7 +32,7 @@ export default function Home() {
                             <p>1</p>
                         </div>
                         <div className="text">
-                            <p>check stoke</p>
+                            <p>check stock</p>
                             <p>prices</p>
                         </div>
                     </div>
