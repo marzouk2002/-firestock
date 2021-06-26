@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../images/logo.svg'
+import instagram from '../images/instagram.svg'
+import twitter from '../images/twitter.svg'
+import facebook from '../images/facebook.svg'
+import github from '../images/github.svg'
+import linkedIn from '../images/linkedIn.svg'
 
 export default function Home() {
     return (
@@ -58,7 +63,14 @@ export default function Home() {
             </main>
             <footer>
                 <div className="social-links">
-
+                    <a href="!#" target="_blank"><img src={facebook} alt="" /></a>
+                    <a href="!#" target="_blank"><img src={twitter} alt="" /></a>
+                    <a href="!#" target="_blank"><img src={github} alt="" /></a>
+                    <a href="!#" target="_blank"><img src={instagram} alt="" /></a>
+                    <a href="!#" target="_blank"><img src={linkedIn} alt="" /></a>
+                </div>
+                <div>
+                    <p>© Untitled | Development : <a href="https://github.com/marzouk2002" rel="noreferrer" target="_blank">Youssouf MARZOUK</a></p>
                 </div>
             </footer>
         </div>

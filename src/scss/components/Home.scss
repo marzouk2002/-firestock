@@ -33,7 +33,7 @@ header {
     margin: 0 10px;
 
     &:last-child {
-      color: $sc-color-sd;
+      color: $sc-color-td;
     }
 
     &:hover {
@@ -67,11 +67,10 @@ header {
     font-size: $lg-text;
     padding: 0.2rem 0.5rem;
     padding-bottom: 0.3rem;
-    transition: background ease-out 0.3s, letter-spacing ease-in-out 0.3s;
+    transition: letter-spacing ease-in-out 0.3s;
 
     &:hover {
       letter-spacing: 2px;
-      background-color: $sc-color-fd;
     }
   }
 }
