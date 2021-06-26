@@ -8,8 +8,38 @@ h1 {
   width: 100%;
 }
 .container header {
-  margin: 0 10%;
+  margin: 0 6%;
   padding: 1rem 0;
+}
+
+header {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  width: 100px;
+}
+header nav {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  color: black;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+header a:last-child {
+  color: #025bc6;
+}
+header a:hover {
+  transform: scale(1.2);
 }
 
 * {

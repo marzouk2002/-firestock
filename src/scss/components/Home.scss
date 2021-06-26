@@ -4,7 +4,42 @@
   width: 100%;
 
   header {
-    margin: 0 10%;
+    margin: 0 6%;
     padding: 1rem 0;
+  }
+}
+
+header {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    width: 100px;
+  }
+
+  nav {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    &:last-child {
+      color: $sc-color-fd;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
