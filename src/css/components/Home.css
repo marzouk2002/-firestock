@@ -98,5 +98,10 @@ header a:hover {
   display: grid;
   place-items: center;
 }
+.sec-2 .text {
+  text-align: center;
+  font-size: calc(9px + 1vw);
+  text-transform: capitalize;
+}
 
 /*# sourceMappingURL=Home.css.map */
