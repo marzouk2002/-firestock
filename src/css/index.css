@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap");
 h1 {
-  font-family: "Roboto";
   font-weight: bold;
-  font-size: 144px;
+  font-size: 100px;
+}
+
+.container {
+  width: 100%;
+}
+.container header {
+  margin: 0 10%;
+  padding: 1rem 0;
 }
 
 * {
@@ -10,6 +17,11 @@ h1 {
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+#root {
+  width: 100%;
+  position: relative;
 }
 
 /*# sourceMappingURL=index.css.map */
