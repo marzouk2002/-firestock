@@ -26,24 +26,29 @@ export default function Home() {
                         <div className="number">
                             <p>1</p>
                         </div>
-                        <p>check stoke</p>
-                        <p>prices</p>
+                        <div className="text">
+                            <p>check stoke</p>
+                            <p>prices</p>
+                        </div>
                     </div>
                     <div className="card">
                         <div className="number">
                             <p>2</p>
                         </div>
-                        <p>Change scale</p>
-                        <p>and currencies</p>
+                        <div className="text">
+                            <p>Change scale</p>
+                            <p>and currencies</p>
+                        </div>
                     </div>
                     <div className="card">
                         <div className="number">
                             <p>3</p>
                         </div>
-                        <p>predict future</p>
-                        <p>values using AI</p>
+                        <div className="text">
+                            <p>predict future</p>
+                            <p>values using AI</p>
+                        </div>
                     </div>
-                    
                 </section>
             </main>
         </div>

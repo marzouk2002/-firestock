@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600&family=Roboto:wght@300;400;500;700;900&display=swap');
 
 $lg-title: calc(60px + 4vw);
 $sm-title: calc(15px + 1.5vw);
-$lg-text: calc(12px + 1.3vw);
+$lg-text: calc(12px + 1.2vw);
+$md-text: calc(9px + 1vw);
 
 h1 {
   font-weight: bold;

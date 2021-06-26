@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600&family=Roboto:wght@300;400;500;700;900&display=swap");
 h1 {
   font-weight: bold;
   font-size: calc(60px + 4vw);
@@ -63,8 +63,9 @@ header a:hover {
 .sec-1 a {
   text-decoration: none;
   color: white;
+  font-family: Montserrat;
   background: #025bc6;
-  font-size: calc(12px + 1.3vw);
+  font-size: calc(9px + 1vw);
   padding: 0.2rem 0.5rem;
   padding-bottom: 0.3rem;
   transition: background ease-out 0.3s, letter-spacing ease-in-out 0.3s;
@@ -72,6 +73,30 @@ header a:hover {
 .sec-1 a:hover {
   letter-spacing: 2px;
   background-color: #004599;
+}
+
+.sec-2 {
+  margin: 0 10%;
+  padding: calc(0.6% + 1vmin) 0;
+  display: flex;
+  justify-content: space-between;
+}
+.sec-2 .card {
+  height: 18vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.sec-2 .number {
+  width: calc(1rem + 12px + 1.2vw);
+  height: calc(1rem + 12px + 1.2vw);
+  font-size: calc(12px + 1.2vw);
+  background-color: #f5820c;
+  border-radius: 50%;
+  color: white;
+  display: grid;
+  place-items: center;
 }
 
 * {

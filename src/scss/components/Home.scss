@@ -62,8 +62,9 @@ header {
   a {
     text-decoration: none;
     color: white;
+    font-family: Montserrat;
     background: $sc-color-sd;
-    font-size: $lg-text;
+    font-size: $md-text;
     padding: 0.2rem 0.5rem;
     padding-bottom: 0.3rem;
     transition: background ease-out 0.3s, letter-spacing ease-in-out 0.3s;
@@ -72,5 +73,32 @@ header {
       letter-spacing: 2px;
       background-color: $sc-color-fd;
     }
+  }
+}
+
+.sec-2 {
+  margin: 0 10%;
+  padding: calc(0.6% + 1vmin) 0;
+  display: flex;
+  justify-content: space-between;
+
+  .card {
+    height: 18vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .number {
+    $size: calc(1rem + 12px + 1.2vw);
+    width: $size;
+    height: $size;
+    font-size: $lg-text;
+    background-color: $pr-color-fd;
+    border-radius: 50%;
+    color: white;
+    display: grid;
+    place-items: center;
   }
 }
