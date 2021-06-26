@@ -1,18 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap");
 h1 {
   font-weight: bold;
-  font-size: 100px;
+  font-size: calc(60px + 4vw);
+}
+
+h3 {
+  font-size: calc(15px + 1.5vw);
 }
 
 .container {
   width: 100%;
 }
-.container header {
-  margin: 0 6%;
-  padding: 1rem 0;
-}
 
 header {
+  margin: 0 6%;
+  padding: 1rem 0;
   display: flex;
   flex: 1 1 100%;
   justify-content: space-between;
@@ -22,7 +24,7 @@ header .logo {
   width: 100px;
 }
 header nav {
-  width: 20%;
+  flex: 0 1 20%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,12 +36,37 @@ header a {
   color: black;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  margin: 0 10px;
 }
 header a:last-child {
   color: #025bc6;
 }
 header a:hover {
   transform: scale(1.2);
+}
+
+.sec-1 {
+  height: 75vh;
+  background: url("../images/background.svg") no-repeat;
+  background-size: calc(10vmax + 300px);
+  background-position: bottom right 5%;
+}
+.sec-1 .content {
+  margin: 0 10%;
+  padding-top: 6%;
+}
+.sec-1 h3 {
+  color: #777777;
+  text-transform: capitalize;
+  margin-bottom: calc(0.6rem + 1vmin);
+}
+.sec-1 a {
+  text-decoration: none;
+  color: white;
+  background: #025bc6;
+  font-size: calc(12px + 1.3vw);
+  padding: 0.2rem 0.5rem;
+  padding-bottom: 0.3rem;
 }
 
 /*# sourceMappingURL=Home.css.map */
