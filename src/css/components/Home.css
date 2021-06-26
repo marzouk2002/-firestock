@@ -106,7 +106,7 @@ header a:hover {
 
 .sec-3 {
   margin-top: 4vh;
-  min-height: 30vh;
+  min-height: 25vh;
   background: url("../images/footer-bg.png") no-repeat;
   background-size: 100% 100%;
   display: grid;
@@ -120,6 +120,39 @@ header a:hover {
   font-size: 1.2rem;
   color: #fff;
   font-weight: 600;
+}
+
+footer {
+  background-color: #f5820c;
+  min-height: 15vh;
+  display: grid;
+  place-items: center;
+}
+footer .content {
+  width: 88%;
+}
+footer .social-links {
+  width: 200px;
+  padding-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .social-links img {
+  width: 1.7rem;
+  transition: 0.3s transform ease-in-out;
+}
+footer .social-links img:hover {
+  transform: scale(1.2);
+}
+footer * {
+  color: white;
+}
+footer a {
+  transition: letter-spacing ease-in-out 0.4s;
+}
+footer a:hover {
+  letter-spacing: 2px;
 }
 
 /*# sourceMappingURL=Home.css.map */

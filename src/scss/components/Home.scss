@@ -111,7 +111,7 @@ header {
 
 .sec-3 {
   margin-top: 4vh;
-  min-height: 30vh;
+  min-height: 25vh;
   background: url('../images/footer-bg.png') no-repeat;
   background-size: 100% 100%;
   display: grid;
@@ -125,5 +125,44 @@ header {
     font-size: 1.2rem;
     color: #fff;
     font-weight: 600;
+  }
+}
+
+footer {
+  background-color: $pr-color-fd;
+  min-height: 15vh;
+  display: grid;
+  place-items: center;
+
+  .content {
+    width: 88%;
+  }
+
+  .social-links {
+    width: 200px;
+    padding-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & img {
+      width: 1.7rem;
+      transition: 0.3s transform ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  * {
+    color: white;
+  }
+
+  a {
+    transition: letter-spacing ease-in-out 0.4s;
+
+    &:hover {
+      letter-spacing: 2px;
+    }
   }
 }

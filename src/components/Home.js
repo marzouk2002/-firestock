@@ -62,15 +62,17 @@ export default function Home() {
                 </section>
             </main>
             <footer>
-                <div className="social-links">
-                    <a href="!#" target="_blank"><img src={facebook} alt="" /></a>
-                    <a href="!#" target="_blank"><img src={twitter} alt="" /></a>
-                    <a href="!#" target="_blank"><img src={github} alt="" /></a>
-                    <a href="!#" target="_blank"><img src={instagram} alt="" /></a>
-                    <a href="!#" target="_blank"><img src={linkedIn} alt="" /></a>
-                </div>
-                <div>
-                    <p>© Untitled | Development : <a href="https://github.com/marzouk2002" rel="noreferrer" target="_blank">Youssouf MARZOUK</a></p>
+                <div className="content">
+                    <div className="social-links">
+                        <a href="!#" target="_blank"><img src={facebook} alt="" /></a>
+                        <a href="!#" target="_blank"><img src={twitter} alt="" /></a>
+                        <a href="!#" target="_blank"><img src={github} alt="" /></a>
+                        <a href="!#" target="_blank"><img src={instagram} alt="" /></a>
+                        <a href="!#" target="_blank"><img src={linkedIn} alt="" /></a>
+                    </div>
+                    <div>
+                        <p>© Untitled | Development : <a href="https://github.com/marzouk2002" rel="noreferrer" target="_blank">Youssouf MARZOUK</a></p>
+                    </div>
                 </div>
             </footer>
         </div>
