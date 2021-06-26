@@ -21,6 +21,30 @@ export default function Home() {
                         <Link to="/register">join now</Link>
                     </div>
                 </section>
+                <section className="sec-2">
+                    <div className="card">
+                        <div className="number">
+                            <p>1</p>
+                        </div>
+                        <p>check stoke</p>
+                        <p>prices</p>
+                    </div>
+                    <div className="card">
+                        <div className="number">
+                            <p>2</p>
+                        </div>
+                        <p>Change scale</p>
+                        <p>and currencies</p>
+                    </div>
+                    <div className="card">
+                        <div className="number">
+                            <p>3</p>
+                        </div>
+                        <p>predict future</p>
+                        <p>values using AI</p>
+                    </div>
+                    
+                </section>
             </main>
         </div>
     )
