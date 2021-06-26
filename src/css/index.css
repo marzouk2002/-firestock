@@ -67,6 +67,11 @@ header a:hover {
   font-size: calc(12px + 1.3vw);
   padding: 0.2rem 0.5rem;
   padding-bottom: 0.3rem;
+  transition: background ease-out 0.3s, letter-spacing ease-in-out 0.3s;
+}
+.sec-1 a:hover {
+  letter-spacing: 2px;
+  background-color: #5da1f2;
 }
 
 * {
