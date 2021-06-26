@@ -56,6 +56,11 @@ export default function Home() {
                     </div>
                 </section>
             </main>
+            <footer>
+                <div className="social-links">
+
+                </div>
+            </footer>
         </div>
     )
 }
