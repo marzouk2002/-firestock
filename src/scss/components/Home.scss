@@ -64,7 +64,7 @@ header {
     color: white;
     font-family: Montserrat;
     background: $sc-color-sd;
-    font-size: $md-text;
+    font-size: $lg-text;
     padding: 0.2rem 0.5rem;
     padding-bottom: 0.3rem;
     transition: background ease-out 0.3s, letter-spacing ease-in-out 0.3s;
@@ -94,7 +94,7 @@ header {
     $size: calc(1rem + 12px + 1.2vw);
     width: $size;
     height: $size;
-    font-size: $lg-text;
+    font-size: $xl-text;
     background-color: $pr-color-fd;
     border-radius: 50%;
     color: white;
@@ -104,7 +104,27 @@ header {
 
   .text {
     text-align: center;
-    font-size: $md-text;
+    font-size: $lg-text;
     text-transform: capitalize;
+    font-weight: 700;
+  }
+}
+
+.sec-3 {
+  margin-top: 4vh;
+  min-height: 30vh;
+  background: url('../images/footer-bg.png') no-repeat;
+  background-size: 100% 100%;
+  display: grid;
+  place-items: center;
+
+  .content {
+    padding: 0 15%;
+    margin: 3%;
+    margin-top: 7%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
   }
 }

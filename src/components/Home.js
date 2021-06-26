@@ -36,7 +36,7 @@ export default function Home() {
                             <p>2</p>
                         </div>
                         <div className="text">
-                            <p>Change scale</p>
+                            <p>different scales</p>
                             <p>and currencies</p>
                         </div>
                     </div>
@@ -48,6 +48,11 @@ export default function Home() {
                             <p>predict future</p>
                             <p>values using AI</p>
                         </div>
+                    </div>
+                </section>
+                <section className="sec-3">
+                    <div className="content">
+                        <p>FireStock is a web app that provides an insight into the stock market by giving the values of stocks in different time scales and currencies. And it goes as far as predicting the stoke values is a trained neural network.</p>
                     </div>
                 </section>
             </main>
