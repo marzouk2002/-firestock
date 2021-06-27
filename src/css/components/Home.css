@@ -66,8 +66,8 @@ header a:hover {
   font-family: Montserrat;
   background: #025bc6;
   font-size: calc(9px + 1vw);
-  padding: 0.2rem 0.5rem;
-  padding-bottom: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  padding-bottom: 0.35rem;
   transition: letter-spacing ease-in-out 0.3s;
 }
 .sec-1 a:hover {
@@ -134,8 +134,9 @@ header a:hover {
   color: white;
   font-family: Montserrat;
   background: #025bc6;
-  padding: 0.2rem 0.5rem;
-  padding-bottom: 0.3rem;
+  font-size: calc(9px + 1vw);
+  padding: 0.3rem 0.6rem;
+  padding-bottom: 0.35rem;
   transition: transform ease-in-out 0.3s;
 }
 .sec-3 a:hover {

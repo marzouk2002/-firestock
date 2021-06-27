@@ -1,3 +1,4 @@
+@use './colors' as *;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600&family=Roboto:wght@300;400;500;700;900&display=swap');
 
 $lg-title: calc(60px + 4vw);
@@ -12,4 +13,14 @@ h1 {
 
 h3 {
   font-size: $sm-title;
+}
+
+@mixin link-btn {
+  text-decoration: none;
+  color: white;
+  font-family: Montserrat;
+  background: $sc-color-sd;
+  font-size: $lg-text;
+  padding: 0.3rem 0.6rem;
+  padding-bottom: 0.35rem;
 }

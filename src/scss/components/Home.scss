@@ -60,13 +60,7 @@ header {
   }
 
   a {
-    text-decoration: none;
-    color: white;
-    font-family: Montserrat;
-    background: $sc-color-sd;
-    font-size: $lg-text;
-    padding: 0.2rem 0.5rem;
-    padding-bottom: 0.3rem;
+    @include link-btn;
     transition: letter-spacing ease-in-out 0.3s;
 
     &:hover {
@@ -137,12 +131,7 @@ header {
   }
 
   a {
-    text-decoration: none;
-    color: white;
-    font-family: Montserrat;
-    background: $sc-color-sd;
-    padding: 0.2rem 0.5rem;
-    padding-bottom: 0.3rem;
+    @include link-btn;
     transition: transform ease-in-out 0.3s;
 
     &:hover {
