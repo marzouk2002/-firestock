@@ -121,18 +121,40 @@ header a:hover {
   color: #fff;
   font-weight: 600;
 }
+.sec-3 .btns {
+  margin: auto;
+  max-width: 300px;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sec-3 a {
+  text-decoration: none;
+  color: white;
+  font-family: Montserrat;
+  background: #025bc6;
+  padding: 0.2rem 0.5rem;
+  padding-bottom: 0.3rem;
+  transition: transform ease-in-out 0.3s;
+}
+.sec-3 a:hover {
+  transform: scale(1.2);
+}
 
 footer {
   background-color: #f5820c;
   min-height: 15vh;
   display: grid;
   place-items: center;
+  padding-bottom: 0.5rem;
 }
 footer .content {
   width: 88%;
 }
 footer .social-links {
   width: 200px;
+  padding-top: 1.5rem;
   padding-bottom: 0.3rem;
   display: flex;
   align-items: center;

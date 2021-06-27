@@ -58,6 +58,10 @@ export default function Home() {
                 <section className="sec-3">
                     <div className="content">
                         <p>FireStock is a web app that provides an insight into the stock market by giving the values of stocks in different time scales and currencies. And it goes as far as predicting the stoke values is a trained neural network.</p>
+                        <div className="btns">
+                            <Link to="/register">Register</Link>
+                            <Link to="/login">Login</Link>
+                        </div>
                     </div>
                 </section>
             </main>

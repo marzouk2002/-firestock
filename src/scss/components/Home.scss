@@ -126,6 +126,29 @@ header {
     color: #fff;
     font-weight: 600;
   }
+
+  .btns {
+    margin: auto;
+    max-width: 300px;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: Montserrat;
+    background: $sc-color-sd;
+    padding: 0.2rem 0.5rem;
+    padding-bottom: 0.3rem;
+    transition: transform ease-in-out 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
 
 footer {
@@ -133,6 +156,7 @@ footer {
   min-height: 15vh;
   display: grid;
   place-items: center;
+  padding-bottom: 0.5rem;
 
   .content {
     width: 88%;
@@ -140,6 +164,7 @@ footer {
 
   .social-links {
     width: 200px;
+    padding-top: 1.5rem;
     padding-bottom: 0.3rem;
     display: flex;
     align-items: center;
