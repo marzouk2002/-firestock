@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import $ from 'jquery'
 import logo from '../images/logo.svg'
 import instagram from '../images/instagram.svg'
 import twitter from '../images/twitter.svg'
@@ -8,12 +9,27 @@ import github from '../images/github.svg'
 import linkedIn from '../images/linkedIn.svg'
 
 export default function Home() {
+
+    const ScrollEffect = (e) => {
+        e.preventDefault();
+
+        let destination = $(e.target.hash);
+    
+        let scrollPosition = destination.offset().top ;
+    
+        let animationDuration = 500;
+    
+        $('html, body').animate({
+            scrollTop: scrollPosition
+        }, animationDuration);
+    } 
+
     return (
         <div className="container">
             <header>
                 <img src={logo} alt="logo" className="logo"/>
                 <nav>
-                    <Link to="#">about</Link>
+                    <a onClick={ScrollEffect} href="#about">about</a>
                     <Link to="/register">register</Link>
                     <Link to="/login">login</Link>
                 </nav>
@@ -55,9 +71,9 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                <section className="sec-3">
+                <section className="sec-3" id="about">
                     <div className="content">
-                        <p>FireStock is a web app that provides an insight into the stock market by giving the values of stocks in different time scales and currencies. And it goes as far as predicting the stoke values is a trained neural network.</p>
+                        <p>FireStock is a web app that provides an insight into the stock market by giving the values of stocks in different time scales and currencies. And it goes as far as predicting the stoke values using a trained neural network.</p>
                         <div className="btns">
                             <Link to="/register">Register</Link>
                             <Link to="/login">Login</Link>
@@ -68,11 +84,11 @@ export default function Home() {
             <footer>
                 <div className="content">
                     <div className="social-links">
-                        <a href="!#" target="_blank"><img src={facebook} alt="" /></a>
-                        <a href="!#" target="_blank"><img src={twitter} alt="" /></a>
-                        <a href="!#" target="_blank"><img src={github} alt="" /></a>
-                        <a href="!#" target="_blank"><img src={instagram} alt="" /></a>
-                        <a href="!#" target="_blank"><img src={linkedIn} alt="" /></a>
+                        <Link to="#"><img src={facebook} alt=""/></Link>
+                        <Link to="#"><img src={twitter} alt=""/></Link>
+                        <Link to="#"><img src={github} alt=""/></Link>
+                        <Link to="#"><img src={instagram} alt=""/></Link>
+                        <Link to="#"><img src={linkedIn} alt=""/></Link>
                     </div>
                     <div>
                         <p>© Untitled | Development : <a href="https://github.com/marzouk2002" rel="noreferrer" target="_blank">Youssouf MARZOUK</a></p>
