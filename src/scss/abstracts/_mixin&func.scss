@@ -1,0 +1,12 @@
+@use './colors' as *;
+@use './typography' as *;
+
+@mixin link-btn {
+  text-decoration: none;
+  color: white;
+  font-family: Montserrat;
+  background: $sc-color-sd;
+  font-size: $lg-text;
+  padding: 0.3rem 0.6rem;
+  padding-bottom: 0.35rem;
+}
