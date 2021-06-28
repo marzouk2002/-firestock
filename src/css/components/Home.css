@@ -16,18 +16,18 @@ header {
   margin: 0 6%;
   padding: 1rem 0;
   display: flex;
-  flex: 1 1 100%;
   justify-content: space-between;
   align-items: center;
+  flex: 1 1 100%;
 }
 header .logo {
   width: 100px;
 }
 header nav {
-  flex: 0 1 20%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 0 1 20%;
 }
 header a {
   text-transform: uppercase;
@@ -79,13 +79,14 @@ header a:hover {
   padding: calc(0.6% + 1vmin) 0;
   display: flex;
   justify-content: space-between;
+  align-items: unset;
 }
 .sec-2 .card {
   height: 18vmin;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
 }
 .sec-2 .number {
   width: calc(1rem + 12px + 1.2vw);
@@ -94,8 +95,9 @@ header a:hover {
   background-color: #f5820c;
   border-radius: 50%;
   color: white;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .sec-2 .text {
   text-align: center;
@@ -109,8 +111,9 @@ header a:hover {
   min-height: 25vh;
   background: url("../images/footer-bg.png") no-repeat;
   background-size: 100% 100%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .sec-3 .content {
   padding: 0 15%;
@@ -146,8 +149,9 @@ header a:hover {
 footer {
   background-color: #f5820c;
   min-height: 15vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 0.5rem;
 }
 footer .content {
@@ -158,8 +162,8 @@ footer .social-links {
   padding-top: 1.5rem;
   padding-bottom: 0.3rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 footer .social-links img {
   width: 1.7rem;

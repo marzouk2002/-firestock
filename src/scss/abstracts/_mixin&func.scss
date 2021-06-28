@@ -10,3 +10,9 @@
   padding: 0.3rem 0.6rem;
   padding-bottom: 0.35rem;
 }
+
+@mixin flex-mix($justify-content: unset, $align-items: unset) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

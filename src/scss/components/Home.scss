@@ -7,20 +7,16 @@
 header {
   margin: 0 6%;
   padding: 1rem 0;
-  display: flex;
+  @include flex-mix(space-between, center);
   flex: 1 1 100%;
-  justify-content: space-between;
-  align-items: center;
 
   .logo {
     width: 100px;
   }
 
   nav {
+    @include flex-mix(space-between, center);
     flex: 0 1 20%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   a {
@@ -72,15 +68,12 @@ header {
 .sec-2 {
   margin: 0 10%;
   padding: calc(0.6% + 1vmin) 0;
-  display: flex;
-  justify-content: space-between;
+  @include flex-mix(space-between);
 
   .card {
     height: 18vmin;
-    display: flex;
+    @include flex-mix(space-around, center);
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
   }
 
   .number {
@@ -91,8 +84,7 @@ header {
     background-color: $pr-color-fd;
     border-radius: 50%;
     color: white;
-    display: grid;
-    place-items: center;
+    @include flex-mix(center, center);
   }
 
   .text {
@@ -108,8 +100,7 @@ header {
   min-height: 25vh;
   background: url('../images/footer-bg.png') no-repeat;
   background-size: 100% 100%;
-  display: grid;
-  place-items: center;
+  @include flex-mix(center, center);
 
   .content {
     padding: 0 15%;
@@ -125,9 +116,7 @@ header {
     margin: auto;
     max-width: 300px;
     margin-top: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-mix(space-between, center);
   }
 
   a {
@@ -143,8 +132,7 @@ header {
 footer {
   background-color: $pr-color-fd;
   min-height: 15vh;
-  display: grid;
-  place-items: center;
+  @include flex-mix(center, center);
   padding-bottom: 0.5rem;
 
   .content {
@@ -155,9 +143,7 @@ footer {
     width: 200px;
     padding-top: 1.5rem;
     padding-bottom: 0.3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-mix(space-between, center);
     & img {
       width: 1.7rem;
       transition: 0.3s transform ease-in-out;
