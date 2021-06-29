@@ -181,12 +181,6 @@ h3 {
   letter-spacing: 2px;
 }
 
-:root {
-  --accent-color: #641bff;
-  --heading-font: "Poppins", sans-serif;
-  --body-font: "Lato", sans-serif;
-}
-
 .options-wrapper {
   z-index: 5;
   margin: 15vh 0;
@@ -196,7 +190,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, 300px);
   grid-template-rows: auto;
-  grid-gap: 2rem;
+  grid-gap: 5vmax;
   position: relative;
   top: 20px;
 }
@@ -210,20 +204,12 @@ h3 {
   box-shadow: 0 10px 30px rgba(31, 18, 58, 0.1);
   padding: 1rem;
 }
-.options-wrapper #s2 {
-  background-color: var(--accent-color);
+.options-wrapper .sections:last-child {
+  background-color: #025bc6;
   color: white;
-  height: 555px;
-  position: relative;
-  top: -40px;
-}
-.options-wrapper .most {
-  font-family: var(--heading-font);
-  padding: 0.5rem;
-  font-weight: bold;
 }
 .options-wrapper .price_holder {
-  font-family: var(--heading-font);
+  font-family: Montserrat;
   padding: 0.8rem;
   display: flex;
   justify-content: center;
@@ -256,7 +242,7 @@ h3 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.options-wrapper #s2 > .divider {
+.options-wrapper .sections:last-child > .divider {
   background-color: rgba(255, 255, 255, 0.2);
 }
 .options-wrapper .features {
@@ -285,28 +271,27 @@ h3 {
 }
 .options-wrapper .cta {
   border: none;
-  background-color: var(--accent-color);
+  background-color: #025bc6;
   color: white;
   width: 80%;
   padding: 0.75rem 1rem;
   cursor: pointer;
-  font-family: var(--heading-font-family);
+  font-family: Montserrat;
   font-weight: bold;
   border-radius: 4px;
   margin: 1.5rem;
   margin-bottom: 0.5rem;
-  transition: 100ms;
+  transition: 300ms;
   transform: scale(1);
 }
-.options-wrapper #s2 .cta {
-  background-color: white;
-  color: var(--accent-color);
-}
-.options-wrapper .cta:hover,
-.options-wrapper .cta:focus {
+.options-wrapper .cta:hover, .options-wrapper .cta:focus {
   transform: scale(1.1);
 }
-@media screen and (max-width: 600px) {
+.options-wrapper .sections:last-child .cta {
+  background-color: white;
+  color: #025bc6;
+}
+@media screen and (max-width: 650px) {
   .options-wrapper main {
     display: grid;
     grid-template-rows: repeat(2, max-content);
@@ -331,7 +316,7 @@ h3 {
 
 .container-auth {
   width: 100%;
-  background-color: #f9f9f9;
+  background-color: #f4f4f4;
   min-height: 100vh;
   height: max-content;
   position: relative;

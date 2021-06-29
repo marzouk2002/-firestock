@@ -7,7 +7,7 @@ function Options() {
                 <h2>Select an Option</h2>
             </header>
             <main>
-                <div className="sections" id="s1">
+                <div className="sections">
                     <div className="price_holder">
                         <div className="price">0</div>
                         <div className="description">BASIC</div>
@@ -22,7 +22,7 @@ function Options() {
                     </div>
                     <button className="cta">Start Today</button>
                 </div>
-                <div className="sections" id="s1">
+                <div className="sections">
                     <div className="price_holder">
                         <div className="price">10</div>
                         <div className="description">PREMIUM</div>
