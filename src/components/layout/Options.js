@@ -7,38 +7,34 @@ function Options() {
                 <h2>Select an Option</h2>
             </header>
             <main>
-                <div class="sections" id="s1">
-                    <div class="price_holder">
-                        <div class="price">10</div>
-                        <div class="description">BASIC</div>
+                <div className="sections" id="s1">
+                    <div className="price_holder">
+                        <div className="price">0</div>
+                        <div className="description">BASIC</div>
                     </div>
-                    <div class="divider"></div>
-                    <div class="features">
-                        <div class="have">Feature A</div>
-                        <div class="have">Feature B</div>
-                        <div class="dont">Feature C</div>
-                        <div class="dont">Feature D</div>
-                        <div class="dont">Feature E</div>
-                        <div class="dont">Feature F</div>
+                    <div className="divider"></div>
+                    <div className="features">
+                        <div className="have">Feature A</div>
+                        <div className="have">Feature B</div>
+                        <div className="dont">Feature C</div>
+                        <div className="dont">Feature D</div>
+                        
                     </div>
-                    <button class="cta">Start Today</button>
+                    <button className="cta">Start Today</button>
                 </div>
-                    <div class="sections" id="s2">
-                    <div class="most">MOST POPULAR</div>
-                    <div class="price_holder">
-                        <div class="price">20</div>
-                        <div class="description">PROFESSIONAL</div>
+                <div className="sections" id="s1">
+                    <div className="price_holder">
+                        <div className="price">10</div>
+                        <div className="description">PREMIUM</div>
                     </div>
-                    <div class="divider"></div>
-                    <div class="features">
-                        <div class="have">Feature A</div>
-                        <div class="have">Feature B</div>
-                        <div class="have">Feature C</div>
-                        <div class="have">Feature D</div>
-                        <div class="dont">Feature E</div>
-                        <div class="dont">Feature F</div>
+                    <div className="divider"></div>
+                    <div className="features">
+                        <div className="have">Feature A</div>
+                        <div className="have">Feature B</div>
+                        <div className="have">Feature C</div>
+                        <div className="have">Feature D</div>
                     </div>
-                    <button class="cta">Start Today</button>
+                    <button className="cta">Start Today</button>
                 </div>
             </main>
         </div>

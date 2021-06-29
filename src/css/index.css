@@ -5,7 +5,7 @@ h1 {
 }
 
 h2 {
-  font-size: calc(30px + 2vw);
+  font-size: calc(25px + 1.8vw);
 }
 
 h3 {
@@ -187,21 +187,28 @@ h3 {
   --body-font: "Lato", sans-serif;
 }
 
+.options-wrapper {
+  z-index: 5;
+  margin: 15vh 0;
+  text-align: center;
+}
 .options-wrapper main {
   display: grid;
-  grid-template-columns: repeat(3, 275px);
-  grid-template-rows: 505px;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: auto;
+  grid-gap: 2rem;
   position: relative;
   top: 20px;
 }
 .options-wrapper .sections {
   display: flex;
-  justify-content: stretch;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 7px 30px rgba(52, 31, 97, 0.1);
+  box-shadow: 0 10px 30px rgba(31, 18, 58, 0.1);
+  padding: 1rem;
 }
 .options-wrapper #s2 {
   background-color: var(--accent-color);
@@ -286,7 +293,8 @@ h3 {
   font-family: var(--heading-font-family);
   font-weight: bold;
   border-radius: 4px;
-  margin-top: 3rem;
+  margin: 1.5rem;
+  margin-bottom: 0.5rem;
   transition: 100ms;
   transform: scale(1);
 }
@@ -298,16 +306,11 @@ h3 {
 .options-wrapper .cta:focus {
   transform: scale(1.1);
 }
-@media screen and (max-width: 825px) {
-  .options-wrapper .price_comp {
+@media screen and (max-width: 600px) {
+  .options-wrapper main {
     display: grid;
-    grid-template-rows: repeat(3, 500px);
+    grid-template-rows: repeat(2, max-content);
     grid-template-columns: 275px;
-    position: relative;
-    top: 3rem;
-  }
-  .options-wrapper #s1 {
-    grid-area: 2/1/3/2;
   }
   .options-wrapper .sections {
     margin-top: 0.2rem;
@@ -328,7 +331,9 @@ h3 {
 
 .container-auth {
   width: 100%;
+  background-color: #f9f9f9;
   min-height: 100vh;
+  height: max-content;
   position: relative;
   display: flex;
   justify-content: center;
@@ -337,7 +342,6 @@ h3 {
 }
 .container-auth::after, .container-auth::before {
   content: "";
-  z-index: -1;
   width: 100%;
   height: 30vh;
   background: url("../images/footer-bg.png") no-repeat;
