@@ -25,7 +25,7 @@ export default function Home() {
     } 
 
     return (
-        <div className="container">
+        <div className="container-home">
             <header>
                 <img src={logo} alt="logo" className="logo"/>
                 <nav>

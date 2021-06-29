@@ -8,11 +8,10 @@ h3 {
   font-size: calc(15px + 1.5vw);
 }
 
-.container {
+.container-home {
   width: 100%;
 }
-
-header {
+.container-home header {
   margin: 0 6%;
   padding: 1rem 0;
   display: flex;
@@ -20,16 +19,16 @@ header {
   align-items: center;
   flex: 1 1 100%;
 }
-header .logo {
+.container-home header .logo {
   width: 100px;
 }
-header nav {
+.container-home header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex: 0 1 20%;
 }
-header a {
+.container-home header a {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
@@ -38,29 +37,28 @@ header a {
   margin: 0 10px;
   transition: transform ease-in-out 0.3s;
 }
-header a:hover {
+.container-home header a:hover {
   transform: scale(1.2);
 }
-header a:last-child {
+.container-home header a:last-child {
   color: #5da1f2;
 }
-
-.sec-1 {
+.container-home .sec-1 {
   height: 75vh;
   background: url("../images/background.svg") no-repeat;
   background-size: calc(10vmax + 300px);
   background-position: bottom right 5%;
 }
-.sec-1 .content {
+.container-home .sec-1 .content {
   margin: 0 10%;
   padding-top: 6%;
 }
-.sec-1 h3 {
+.container-home .sec-1 h3 {
   color: #777777;
   text-transform: capitalize;
   margin-bottom: calc(0.6rem + 1vmin);
 }
-.sec-1 a {
+.container-home .sec-1 a {
   text-decoration: none;
   color: white;
   font-family: Montserrat;
@@ -70,25 +68,24 @@ header a:last-child {
   padding-bottom: 0.35rem;
   transition: letter-spacing ease-in-out 0.3s;
 }
-.sec-1 a:hover {
+.container-home .sec-1 a:hover {
   letter-spacing: 2px;
 }
-
-.sec-2 {
+.container-home .sec-2 {
   margin: 0 10%;
   padding: calc(0.6% + 1vmin) 0;
   display: flex;
   justify-content: space-between;
   align-items: unset;
 }
-.sec-2 .card {
+.container-home .sec-2 .card {
   height: 18vmin;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
 }
-.sec-2 .number {
+.container-home .sec-2 .number {
   width: calc(1rem + 12px + 1.2vw);
   height: calc(1rem + 12px + 1.2vw);
   font-size: calc(12px + 1.2vw);
@@ -99,14 +96,13 @@ header a:last-child {
   justify-content: center;
   align-items: center;
 }
-.sec-2 .text {
+.container-home .sec-2 .text {
   text-align: center;
   font-size: calc(9px + 1vw);
   text-transform: capitalize;
   font-weight: 700;
 }
-
-.sec-3 {
+.container-home .sec-3 {
   margin-top: 4vh;
   min-height: 25vh;
   background: url("../images/footer-bg.png") no-repeat;
@@ -115,7 +111,7 @@ header a:last-child {
   justify-content: center;
   align-items: center;
 }
-.sec-3 .content {
+.container-home .sec-3 .content {
   padding: 0 15%;
   margin: 3%;
   margin-top: 7%;
@@ -124,7 +120,7 @@ header a:last-child {
   color: #fff;
   font-weight: 600;
 }
-.sec-3 .btns {
+.container-home .sec-3 .btns {
   margin: auto;
   max-width: 300px;
   margin-top: 1.5rem;
@@ -132,7 +128,7 @@ header a:last-child {
   justify-content: space-between;
   align-items: center;
 }
-.sec-3 a {
+.container-home .sec-3 a {
   text-decoration: none;
   color: white;
   font-family: Montserrat;
@@ -142,11 +138,10 @@ header a:last-child {
   padding-bottom: 0.35rem;
   transition: transform ease-in-out 0.3s;
 }
-.sec-3 a:hover {
+.container-home .sec-3 a:hover {
   transform: scale(1.2);
 }
-
-footer {
+.container-home footer {
   background-color: #f5820c;
   min-height: 15vh;
   display: flex;
@@ -154,10 +149,10 @@ footer {
   align-items: center;
   padding-bottom: 0.5rem;
 }
-footer .content {
+.container-home footer .content {
   width: 88%;
 }
-footer .social-links {
+.container-home footer .social-links {
   width: 200px;
   padding-top: 1.5rem;
   padding-bottom: 0.3rem;
@@ -165,20 +160,20 @@ footer .social-links {
   justify-content: space-between;
   align-items: center;
 }
-footer .social-links img {
+.container-home footer .social-links img {
   width: 1.7rem;
   transition: transform ease-in-out 0.3s;
 }
-footer .social-links img:hover {
+.container-home footer .social-links img:hover {
   transform: scale(1.2);
 }
-footer * {
+.container-home footer * {
   color: white;
 }
-footer a {
+.container-home footer a {
   transition: letter-spacing ease-in-out 0.4s;
 }
-footer a:hover {
+.container-home footer a:hover {
   letter-spacing: 2px;
 }
 
@@ -192,6 +187,28 @@ footer a:hover {
 #root {
   width: 100%;
   position: relative;
+}
+
+.container-auth {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.container-auth::after, .container-auth::before {
+  content: "";
+  z-index: -1;
+  width: 100%;
+  height: 30vh;
+  background: url("../images/footer-bg.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: -20vh;
+  left: 0;
+}
+.container-auth::before {
+  top: -20vh;
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=index.css.map */

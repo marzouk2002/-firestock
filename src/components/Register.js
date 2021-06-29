@@ -2,7 +2,7 @@ import React from 'react'
 
 function Register() {
     return (
-        <div>
+        <div className="container-auth container-register">
             
         </div>
     )
