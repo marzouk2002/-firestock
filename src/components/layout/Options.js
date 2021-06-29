@@ -1,13 +1,17 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 function Options() {
     return (
         <div className="options-wrapper">
             <header>
-                <h2>Select an Option</h2>
+                <motion.h2 initial={{opacity:0}}
+                animate={{opacity: 1}} transition={{duration: 0.8, delay: 0.2}} >
+                    Select an Option</motion.h2>
             </header>
             <main>
-                <div className="sections">
+                <motion.div initial={{opacity:0, y: 50}}
+                animate={{opacity: 1, y:0}} transition={{duration: 0.9}} className="sections">
                     <div className="price_holder">
                         <div className="price">0</div>
                         <div className="description">BASIC</div>
@@ -21,8 +25,9 @@ function Options() {
                         
                     </div>
                     <button className="cta">Start Today</button>
-                </div>
-                <div className="sections">
+                </motion.div>
+                <motion.div initial={{opacity:0, y: 50}}
+                animate={{opacity: 1, y:0}} transition={{duration: 1}} className="sections">
                     <div className="price_holder">
                         <div className="price">10</div>
                         <div className="description">PREMIUM</div>
@@ -35,7 +40,7 @@ function Options() {
                         <div className="have">Feature D</div>
                     </div>
                     <button className="cta">Start Today</button>
-                </div>
+                </motion.div>
             </main>
         </div>
     )

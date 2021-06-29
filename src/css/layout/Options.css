@@ -23,7 +23,7 @@ h3 {
   grid-template-rows: auto;
   grid-gap: 5vmax;
   position: relative;
-  top: 20px;
+  top: 15px;
 }
 .options-wrapper .sections {
   display: flex;
