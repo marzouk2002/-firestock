@@ -11,7 +11,7 @@ function Options() {
             </header>
             <main>
                 <motion.div initial={{opacity:0, y: 50}}
-                animate={{opacity: 1, y:0}} transition={{duration: 0.9}} className="sections">
+                animate={{opacity: 1, y:0}} transition={{duration: 0.8}} className="sections">
                     <div className="price_holder">
                         <div className="price">0</div>
                         <div className="description">BASIC</div>
