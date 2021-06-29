@@ -1,5 +1,6 @@
+@use './abstracts' as *;
 @use './components/Home';
-@use './components/Register';
+@use './layout/Options';
 
 * {
   margin: 0;
@@ -16,8 +17,9 @@
 
 .container-auth {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
+  @include flex-mix(center, center);
   overflow: hidden;
 
   &::after,

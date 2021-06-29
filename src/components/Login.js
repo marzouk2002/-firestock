@@ -2,7 +2,7 @@ import React from 'react'
 
 function Login() {
     return (
-        <div className="container-auth container-login">
+        <div className="container-auth">
             
         </div>
     )

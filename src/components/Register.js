@@ -1,9 +1,10 @@
 import React from 'react'
+import Options from './layout/Options'
 
 function Register() {
     return (
-        <div className="container-auth container-register">
-            
+        <div className="container-auth">
+            <Options/>
         </div>
     )
 }
