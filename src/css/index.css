@@ -35,14 +35,14 @@ header a {
   font-weight: 700;
   color: black;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
   margin: 0 10px;
-}
-header a:last-child {
-  color: #5da1f2;
+  transition: transform ease-in-out 0.3s;
 }
 header a:hover {
   transform: scale(1.2);
+}
+header a:last-child {
+  color: #5da1f2;
 }
 
 .sec-1 {
@@ -167,7 +167,7 @@ footer .social-links {
 }
 footer .social-links img {
   width: 1.7rem;
-  transition: 0.3s transform ease-in-out;
+  transition: transform ease-in-out 0.3s;
 }
 footer .social-links img:hover {
   transform: scale(1.2);

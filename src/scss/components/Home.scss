@@ -25,15 +25,11 @@ header {
     font-weight: 700;
     color: black;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
     margin: 0 10px;
+    @include hoverScaleEffect;
 
     &:last-child {
       color: $sc-color-td;
-    }
-
-    &:hover {
-      transform: scale(1.2);
     }
   }
 }
@@ -121,11 +117,7 @@ header {
 
   a {
     @include link-btn;
-    transition: transform ease-in-out 0.3s;
-
-    &:hover {
-      transform: scale(1.2);
-    }
+    @include hoverScaleEffect;
   }
 }
 
@@ -146,11 +138,7 @@ footer {
     @include flex-mix(space-between, center);
     & img {
       width: 1.7rem;
-      transition: 0.3s transform ease-in-out;
-
-      &:hover {
-        transform: scale(1.2);
-      }
+      @include hoverScaleEffect;
     }
   }
 
