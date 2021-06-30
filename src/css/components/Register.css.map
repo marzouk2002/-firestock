@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../scss/abstracts/_typography.scss","../../scss/components/Register.scss"],"names":[],"mappings":"AAAQ;AAQR;EACE;EACA,WARS;;;AAWX;EACE,WAXS;;;AAcX;EACE,WAdS;;;ACFX;EACE;EACA;EACA;EACA;EACA;EACA","file":"Register.css"}
+{"version":3,"sourceRoot":"","sources":["../../scss/abstracts/_typography.scss","../../scss/components/Register.scss"],"names":[],"mappings":"AAAQ;AAQR;EACE;EACA,WARS;;;AAWX;EACE,WAXS;;;AAcX;EACE,WAdS;;;ACFX;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA;EACA","file":"Register.css"}

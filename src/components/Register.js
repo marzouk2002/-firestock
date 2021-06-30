@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Options from './layout/Options'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 function Register() {
     const [ selectedOpt, setSelectedOp ] = useState(null)
@@ -18,11 +18,22 @@ function Register() {
                         Creating a {selectedOpt} account</motion.h2>
                     </header>
                     <main>
+                        <form>
+                            <TextField id="outlined-full-width" label="Name" style={inputStyle} variant="outlined" />
+                            <TextField id="outlined-full-width" label="Email" style={inputStyle} variant="outlined" />
+                            <TextField id="outlined-full-width" label="Password" style={inputStyle} type="password" variant="outlined" />
+                            <TextField id="outlined-full-width" label="Confirm Password" style={inputStyle} type="password" variant="outlined" />
+                        </form>
                     </main>
                 </div>
             } 
         </div>
     )
+}
+
+const inputStyle = {
+    width: '95%',
+    margin: '0.5rem 0'
 }
 
 export default Register
