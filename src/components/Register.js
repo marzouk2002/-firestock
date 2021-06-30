@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Options from './layout/Options'
-import { makeStyles } from '@material-ui/core/styles';
 import { TextField, Button } from '@material-ui/core';
+import { FaGoogle, FaFacebookF } from "react-icons/fa";
 
 function Register() {
     const [ selectedOpt, setSelectedOp ] = useState(null)
+    const [ formState, setFormState ] = useState({ name: '', email: '', password: '', password2: ''})
+
+    const handleFormChange = (e) => {
+        const { name, value }  = e.target
+
+        setFormState({ ...formState, [name]: value })
+    }
 
     return (
         <div className="container-auth">
@@ -15,14 +22,25 @@ function Register() {
                     <header>
                         <motion.h2 initial={{opacity:0}}
                         animate={{opacity: 1}} transition={{duration: 0.8}} >
-                        Creating a {selectedOpt} account</motion.h2>
+                        {selectedOpt} account</motion.h2>
                     </header>
-                    <main>
+                    <motion.main initial={{opacity:0, x:100}}
+                    animate={{opacity: 1, x: 0}} transition={{duration: 0.5}} >
                         <form autoComplete="off">
-                            <TextField id="outlined-full-width" label="Name" style={inputStyle} variant="outlined" />
-                            <TextField id="outlined-full-width" label="Email" style={inputStyle} variant="outlined" />
-                            <TextField id="outlined-full-width" label="Password" style={inputStyle} type="password" variant="outlined" />
-                            <TextField id="outlined-full-width" label="Confirm Password" style={inputStyle} type="password" variant="outlined" />
+                            <TextField onChange={handleFormChange} name="name" value={formState.name} label="Name" style={inputStyle} variant="outlined" />
+                            <TextField onChange={handleFormChange} name="email" value={formState.email} label="Email" style={inputStyle} variant="outlined" />
+                            <TextField onChange={handleFormChange} name="password" value={formState.password} label="Password" style={inputStyle} type="password" variant="outlined" />
+                            <TextField onChange={handleFormChange} name="password2" value={formState.password2} label="Confirm Password" style={inputStyle} type="password" variant="outlined" />
+                            <div className="socials">
+                                <div>
+                                    <FaGoogle/>
+                                    <p>Register with Google</p>
+                                </div>
+                                <div>
+                                    <FaFacebookF/>
+                                    <p>Register with Facebook</p>
+                                </div>
+                            </div>
                             <div className="btns">
                                 <Button variant="contained" color="primary" onClick={()=>setSelectedOp(null)} disableElevation>
                                     Go Back
@@ -32,7 +50,7 @@ function Register() {
                                 </Button>
                             </div>
                         </form>
-                    </main>
+                    </motion.main>
                 </div>
             } 
         </div>
