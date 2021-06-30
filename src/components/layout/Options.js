@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-function Options() {
+function Options({setSelectedOp, selectedOpt}) {
+    const [ anim, setAnim ] = useState({})
+
+    
+    const handleBtnClick = (e) => {
+        const { value } = e.target
+
+        setAnim({ scale: 0.5, opacity:0 })
+        setTimeout(()=>setSelectedOp(value), 500)
+    }
+
     return (
-        <div className="options-wrapper">
+        <motion.div animate={anim} transition={{duration:.6}} className="options-wrapper">
             <header>
                 <motion.h2 initial={{opacity:0}}
                 animate={{opacity: 1}} transition={{duration: 0.8, delay: 0.2}} >
@@ -24,7 +34,7 @@ function Options() {
                         <div className="dont">Feature D</div>
                         
                     </div>
-                    <button className="cta">Start Today</button>
+                    <button className="cta" value="Basic" onClick={handleBtnClick}>Start Today</button>
                 </motion.div>
                 <motion.div initial={{opacity:0, y: 50}}
                 animate={{opacity: 1, y:0}} transition={{duration: 1}} className="sections">
@@ -39,10 +49,10 @@ function Options() {
                         <div className="have">Feature C</div>
                         <div className="have">Feature D</div>
                     </div>
-                    <button className="cta">Start Today</button>
+                    <button className="cta" value="Premium" onClick={handleBtnClick}>Start Today</button>
                 </motion.div>
             </main>
-        </div>
+        </motion.div>
     )
 }
 

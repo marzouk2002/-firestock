@@ -181,6 +181,15 @@ h3 {
   letter-spacing: 2px;
 }
 
+.registerForm-wrapper {
+  text-align: center;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 80%;
+  max-width: 600px;
+}
+
 .options-wrapper {
   z-index: 5;
   margin: 15vh 0;

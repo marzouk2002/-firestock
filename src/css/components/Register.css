@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600&family=Roboto:wght@300;400;500;700;900&display=swap");
+h1 {
+  font-weight: bold;
+  font-size: calc(60px + 4vw);
+}
+
+h2 {
+  font-size: calc(25px + 1.8vw);
+}
+
+h3 {
+  font-size: calc(15px + 1.5vw);
+}
+
+.registerForm-wrapper {
+  text-align: center;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 80%;
+  max-width: 600px;
+}
+
+/*# sourceMappingURL=Register.css.map */
