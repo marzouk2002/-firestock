@@ -32,7 +32,11 @@ h3 {
   align-items: center;
   margin: 0.5rem;
   margin-top: 0.8rem;
-  gap: 10%;
+  gap: 3%;
+}
+.registerForm-wrapper main .btns button {
+  position: relative;
+  left: -2.3%;
 }
 .registerForm-wrapper main .socials {
   display: flex;

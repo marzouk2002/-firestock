@@ -10,7 +10,6 @@ function Register() {
 
     const handleFormChange = (e) => {
         const { name, value }  = e.target
-
         setFormState({ ...formState, [name]: value })
     }
 
