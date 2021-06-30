@@ -16,12 +16,13 @@
 
     .btns {
       @include flex-mix(center, center);
-      margin: 0.8rem 10% 0 10%;
+      margin: 0.5rem;
+      margin-top: 0.8rem;
       gap: 10%;
     }
 
     .socials {
-      @include flex-mix(center, center);
+      @include flex-mix(space-around, center);
       gap: 1rem;
       flex-wrap: wrap;
       margin: 0.5rem;

@@ -199,12 +199,13 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.8rem 10% 0 10%;
+  margin: 0.5rem;
+  margin-top: 0.8rem;
   gap: 10%;
 }
 .registerForm-wrapper main .socials {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
