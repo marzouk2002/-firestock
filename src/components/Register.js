@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Options from './layout/Options'
 import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import { TextField, Button } from '@material-ui/core';
 
 function Register() {
     const [ selectedOpt, setSelectedOp ] = useState(null)
@@ -18,11 +18,19 @@ function Register() {
                         Creating a {selectedOpt} account</motion.h2>
                     </header>
                     <main>
-                        <form>
+                        <form autoComplete="off">
                             <TextField id="outlined-full-width" label="Name" style={inputStyle} variant="outlined" />
                             <TextField id="outlined-full-width" label="Email" style={inputStyle} variant="outlined" />
                             <TextField id="outlined-full-width" label="Password" style={inputStyle} type="password" variant="outlined" />
                             <TextField id="outlined-full-width" label="Confirm Password" style={inputStyle} type="password" variant="outlined" />
+                            <div className="btns">
+                                <Button variant="contained" color="primary" onClick={()=>setSelectedOp(null)} disableElevation>
+                                    Go Back
+                                </Button>
+                                <Button variant="contained" color="primary" type="submit" disableElevation>
+                                    Submit
+                                </Button>
+                            </div>
                         </form>
                     </main>
                 </div>

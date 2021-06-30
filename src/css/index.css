@@ -196,6 +196,12 @@ h3 {
   height: 65vh;
   padding: 1rem;
 }
+.registerForm-wrapper main .btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 10%;
+}
 
 .options-wrapper {
   z-index: 5;
