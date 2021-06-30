@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'
 import { TextField, Button } from '@material-ui/core';
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
@@ -13,7 +14,7 @@ function Login() {
 
     return (
         <div className="container-auth">
-            <div className="registerForm-wrapper">
+            <div className="regisLoginForm-wrapper">
                     <header>
                         <motion.h2 initial={{opacity:0}}
                         animate={{opacity: 1}} transition={{duration: 0.8}} >
@@ -41,6 +42,7 @@ function Login() {
                             </div>
                         </form>
                     </motion.main>
+                    <p>No account? <Link to="/register">Create one now!</Link></p>
                 </div>
         </div>
     )

@@ -12,7 +12,7 @@ h3 {
   font-size: calc(15px + 1.5vw);
 }
 
-.registerForm-wrapper {
+.regisLoginForm-wrapper {
   text-align: center;
   z-index: 5;
   display: flex;
@@ -20,13 +20,13 @@ h3 {
   flex: 0 0 80%;
   max-width: 600px;
 }
-.registerForm-wrapper main {
+.regisLoginForm-wrapper main {
   background-color: #fff;
   border-radius: 10px;
   margin-top: 1rem;
   padding: 1rem;
 }
-.registerForm-wrapper main .btns {
+.regisLoginForm-wrapper main .btns {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,11 +34,11 @@ h3 {
   margin-top: 0.8rem;
   gap: 3%;
 }
-.registerForm-wrapper main .btns button {
+.regisLoginForm-wrapper main .btns button {
   position: relative;
   left: -2.3%;
 }
-.registerForm-wrapper main .socials {
+.regisLoginForm-wrapper main .socials {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -49,7 +49,7 @@ h3 {
   font-size: 1.1rem;
   font-weight: 500;
 }
-.registerForm-wrapper main .socials div {
+.regisLoginForm-wrapper main .socials div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,14 +59,14 @@ h3 {
   cursor: pointer;
   transition: transform ease-in-out 0.3s;
 }
-.registerForm-wrapper main .socials div:hover {
+.regisLoginForm-wrapper main .socials div:hover {
   transform: scale(1.1);
 }
-.registerForm-wrapper main .socials div svg {
+.regisLoginForm-wrapper main .socials div svg {
   font-size: 1.5rem;
   margin-right: 0.5rem;
 }
-.registerForm-wrapper main .socials div:last-child {
+.regisLoginForm-wrapper main .socials div:last-child {
   background-color: #395693;
 }
 

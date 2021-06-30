@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'
 import Options from './layout/Options'
 import { TextField, Button } from '@material-ui/core';
@@ -17,7 +18,7 @@ function Register() {
         <div className="container-auth">
             {
                 !selectedOpt ? <Options  setSelectedOp={setSelectedOp} selectedOpt={selectedOpt}/> : 
-                <div className="registerForm-wrapper">
+                <div className="regisLoginForm-wrapper">
                     <header>
                         <motion.h2 initial={{opacity:0}}
                         animate={{opacity: 1}} transition={{duration: 0.8}} >
@@ -50,6 +51,7 @@ function Register() {
                             </div>
                         </form>
                     </motion.main>
+                    <p>Already registered? <Link to="/login">Login now!</Link></p>
                 </div>
             } 
         </div>
