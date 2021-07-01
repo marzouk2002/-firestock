@@ -7,7 +7,7 @@ import Alert from './layout/Alert';
 
 function Login() {
     const [ formState, setFormState ] = useState({ email: '', password: '' })
-    const [ alert, setAlert ] = useState('Sorry, no user with that email')
+    const [ alert, setAlert ] = useState(null)
 
     const handleFormChange = (e) => {
         const { name, value }  = e.target
