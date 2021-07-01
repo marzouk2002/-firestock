@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'
 import { TextField, Button } from '@material-ui/core';
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
+import Alert from './layout/Alert';
 
 function Login() {
     const [ formState, setFormState ] = useState({ email: '', password: '' })
+    const [ alert, setAlert ] = useState('null')
 
     const handleFormChange = (e) => {
         const { name, value }  = e.target
@@ -20,6 +22,7 @@ function Login() {
                         animate={{opacity: 1}} transition={{duration: 0.8}} >
                         Login</motion.h2>
                     </header>
+                    {alert && <Alert alert={alert} setAlert={setAlert}/>}
                     <motion.main initial={{opacity:0, x:100}}
                     animate={{opacity: 1, x: 0}} transition={{duration: 0.8, delay: 0.1}} >
                         <form autoComplete="off">

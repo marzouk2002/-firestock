@@ -34,11 +34,11 @@ function Register() {
                             <div className="socials">
                                 <div>
                                     <FaGoogle/>
-                                    <p>Register with Google</p>
+                                    <p>Sign in with Google</p>
                                 </div>
                                 <div>
                                     <FaFacebookF/>
-                                    <p>Register with Facebook</p>
+                                    <p>Sign in with Facebook</p>
                                 </div>
                             </div>
                             <div className="btns">
