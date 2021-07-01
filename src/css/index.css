@@ -360,6 +360,33 @@ h3 {
   }
 }
 
+.alert-wrapper {
+  width: 80%;
+  border-radius: 10px;
+  background-color: #ffa610;
+  border: 3px solid #ffca2a;
+  margin: auto;
+  margin-top: 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
+  font-weight: 700;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+.alert-wrapper svg {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #ffca2a;
+  transition: 0.3s ease-in-out color, 0.3s ease-in-out transform;
+}
+.alert-wrapper svg:hover {
+  color: #f5820c;
+  transform: scale(1.2);
+}
+
 * {
   margin: 0;
   padding: 0;

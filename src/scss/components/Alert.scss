@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.alert-wrapper {
+  width: 80%;
+  border-radius: 10px;
+  background-color: $pr-color-sd;
+  border: 3px solid $pr-color-td;
+  margin: auto;
+  margin-top: 1rem;
+  color: white;
+  @include flex-mix(space-between, center);
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
+  font-weight: 700;
+  opacity: 0.9;
+  font-size: 1.1rem;
+
+  svg {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: $pr-color-td;
+    transition: 0.3s ease-in-out color, 0.3s ease-in-out transform;
+
+    &:hover {
+      color: $pr-color-fd;
+      transform: scale(1.2);
+    }
+  }
+}

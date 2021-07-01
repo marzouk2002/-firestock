@@ -1,7 +1,8 @@
 @use './abstracts' as *;
 @use './components/Home';
-@use './components/Register';
+@use './components/Auth';
 @use './layout/Options';
+@use './components/Alert';
 
 * {
   margin: 0;
