@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'
 import Options from './layout/Options'
-import Alert from './layout/Alert';
 import { TextField, Button } from '@material-ui/core';
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
 
 function Register() {
     const [ selectedOpt, setSelectedOp ] = useState(null)
     const [ formState, setFormState ] = useState({ name: '', email: '', password: '', password2: ''})
-    const [ alert, setAlert ] = useState(null)
 
     const handleFormChange = (e) => {
         const { name, value }  = e.target
@@ -26,7 +24,6 @@ function Register() {
                         animate={{opacity: 1}} transition={{duration: 0.8}} >
                         {selectedOpt} account</motion.h2>
                     </header>
-                    {alert && <Alert alert={alert} setAlert={setAlert}/>}
                     <motion.main initial={{opacity:0, x:100}}
                     animate={{opacity: 1, x: 0}} transition={{duration: 0.5}} >
                         <form autoComplete="off">
