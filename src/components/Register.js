@@ -8,6 +8,7 @@ import { FaGoogle, FaFacebookF } from "react-icons/fa";
 function Register() {
     const [ selectedOpt, setSelectedOp ] = useState(null)
     const [ formState, setFormState ] = useState({ name: '', email: '', password: '', password2: ''})
+    const [ errState, setErrState ] = useState({ email: '', password: '', password2: '' })
 
     const handleFormChange = (e) => {
         const { name, value }  = e.target
@@ -28,9 +29,9 @@ function Register() {
                     animate={{opacity: 1, x: 0}} transition={{duration: 0.5}} >
                         <form autoComplete="off">
                             <TextField onChange={handleFormChange} name="name" value={formState.name} label="Name" style={inputStyle} variant="outlined" />
-                            <TextField onChange={handleFormChange} name="email" value={formState.email} label="Email" style={inputStyle} variant="outlined" />
-                            <TextField onChange={handleFormChange} name="password" value={formState.password} label="Password" style={inputStyle} type="password" variant="outlined" />
-                            <TextField onChange={handleFormChange} name="password2" value={formState.password2} label="Confirm Password" style={inputStyle} type="password" variant="outlined" />
+                            <TextField onChange={handleFormChange} name="email" value={formState.email} label="Email" style={inputStyle} variant="outlined" error={Boolean(errState.email)} helperText={errState.email} />
+                            <TextField onChange={handleFormChange} name="password" value={formState.password} label="Password" style={inputStyle} type="password" variant="outlined" error={Boolean(errState.password)} helperText={errState.password} />
+                            <TextField onChange={handleFormChange} name="password2" value={formState.password2} label="Confirm Password" style={inputStyle} type="password" variant="outlined"  error={Boolean(errState.password2)} helperText={errState.password2}/>
                             <div className="socials">
                                 <div>
                                     <FaGoogle/>

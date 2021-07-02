@@ -6,6 +6,7 @@ import { FaGoogle, FaFacebookF } from "react-icons/fa";
 
 function Login() {
     const [ formState, setFormState ] = useState({ email: '', password: '' })
+    const [ errState, setErrState ] = useState({ email: '', password: '' })
 
     const handleFormChange = (e) => {
         const { name, value }  = e.target
