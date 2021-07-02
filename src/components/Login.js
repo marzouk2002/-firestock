@@ -24,8 +24,8 @@ function Login() {
                     <motion.main initial={{opacity:0, x:100}}
                     animate={{opacity: 1, x: 0}} transition={{duration: 0.8, delay: 0.1}} >
                         <form autoComplete="off">
-                            <TextField onChange={handleFormChange} name="email" value={formState.email} label="Email" style={inputStyle} variant="outlined" />
-                            <TextField onChange={handleFormChange} name="password" value={formState.password} label="Password" style={inputStyle} type="password" variant="outlined" />
+                            <TextField onChange={handleFormChange} name="email" value={formState.email} label="Email" style={inputStyle} variant="outlined"  error={Boolean(errState.email)} helperText={errState.email}/>
+                            <TextField onChange={handleFormChange} name="password" value={formState.password} label="Password" style={inputStyle} type="password" variant="outlined"  error={Boolean(errState.password)} helperText={errState.password}/>
                             <div className="socials">
                                 <div>
                                     <FaGoogle/>
