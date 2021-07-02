@@ -28,10 +28,10 @@ function Options({setSelectedOp, selectedOpt}) {
                     </div>
                     <div className="divider"></div>
                     <div className="features">
-                        <div className="have">Feature A</div>
-                        <div className="have">Feature B</div>
-                        <div className="dont">Feature C</div>
-                        <div className="dont">Feature D</div>
+                        <div className="have">Stock prices</div>
+                        <div className="have">Multiple time scales</div>
+                        <div className="dont">Any currency</div>
+                        <div className="dont">Predict future values</div>
                         
                     </div>
                     <button className="cta" value="Basic" onClick={handleBtnClick}>Start Today</button>
@@ -44,10 +44,10 @@ function Options({setSelectedOp, selectedOpt}) {
                     </div>
                     <div className="divider"></div>
                     <div className="features">
-                        <div className="have">Feature A</div>
-                        <div className="have">Feature B</div>
-                        <div className="have">Feature C</div>
-                        <div className="have">Feature D</div>
+                        <div className="have">Stock prices</div>
+                        <div className="have">Multiple time scales</div>
+                        <div className="have">Any currency</div>
+                        <div className="have">Predict future values</div>
                     </div>
                     <button className="cta" value="Premium" onClick={handleBtnClick}>Start Today</button>
                 </motion.div>

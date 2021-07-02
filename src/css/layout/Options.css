@@ -78,7 +78,8 @@ h3 {
 }
 .options-wrapper .features {
   position: relative;
-  left: -50px;
+  left: -20px;
+  text-align: start;
 }
 .options-wrapper .have,
 .options-wrapper .dont {
