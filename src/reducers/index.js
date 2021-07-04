@@ -17,6 +17,7 @@ firebase.initializeApp({
   })
 
 const allReducers = combineReducers({
+    firebase: firebase,
     auth: firebase.auth(),
     firestore: firebase.firestore()
 })
