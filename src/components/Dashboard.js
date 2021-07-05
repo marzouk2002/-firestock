@@ -7,11 +7,11 @@ import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 function Dashboard() {
     const { firebase, auth, firestore } = useSelector(state => state)
-    const [user] = useAuthState(auth)
+    const user = null
     console.log(auth)
     return (
         <>
-            {user && <Redirect to="/login"/>}
+            {!user ? <Redirect to="login"/> : <h1>Dashboard</h1>}
         </>
     )
 }
