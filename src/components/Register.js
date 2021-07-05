@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion'
 import Options from './layout/Options'
 import { TextField, Button } from '@material-ui/core';
@@ -9,6 +10,7 @@ function Register() {
     const [ selectedOpt, setSelectedOp ] = useState(null)
     const [ formState, setFormState ] = useState({ name: '', email: '', password: '', password2: ''})
     const [ errState, setErrState ] = useState({ email: '', password: '', password2: '' })
+    const { firebase, auth, firestore } = useSelector(state => state)
 
     const handleFormChange = (e) => {
         const { name, value }  = e.target
