@@ -17,15 +17,15 @@ firebase.initializeApp({
 })
 
 const fireReducer = (state = firebase, action) => {
-  return firebase
+  return state
 }
 
 const authReducer = (state = firebase.auth(), action) => {
-  return firebase.auth()
+  return state
 }
 
-const storeReducer = (state = firebase, action) => {
-  return firebase
+const storeReducer = (state = firebase.firestore(), action) => {
+  return state
 }
 
 const allReducers = combineReducers({
