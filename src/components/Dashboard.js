@@ -1,17 +1,17 @@
 import React from 'react'
-import { Redirect } from 'react-dom'
 import { useSelector } from 'react-redux'
-
+import { useHistory } from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 function Dashboard() {
     const { firebase, auth, firestore } = useSelector(state => state)
-    const user = null
-    console.log(auth)
+    const [ user ] = useAuthState(auth)
+    let history = useHistory();
+
     return (
         <>
-            {!user ? <Redirect to="login"/> : <h1>Dashboard</h1>}
+            {!user ? history.push('/login') : <h1>Dashboard</h1>}
         </>
     )
 }
