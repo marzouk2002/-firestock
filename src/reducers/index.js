@@ -14,12 +14,24 @@ firebase.initializeApp({
     appId: "1:1039014190091:web:34303796ed52c304923b0e",
     measurementId: "G-NXMQS34RWX"
     // TO CHANGE
-  })
+})
+
+const fireReducer = (state = firebase, action) => {
+  return firebase
+}
+
+const authReducer = (state = firebase.auth(), action) => {
+  return firebase.auth()
+}
+
+const storeReducer = (state = firebase, action) => {
+  return firebase
+}
 
 const allReducers = combineReducers({
-    firebase: firebase,
-    auth: firebase.auth(),
-    firestore: firebase.firestore()
+    firebase: fireReducer,
+    auth: authReducer,
+    firestore: storeReducer
 })
 
 export default allReducers
