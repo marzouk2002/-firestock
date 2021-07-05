@@ -5,15 +5,13 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 firebase.initializeApp({
-    // TO CHANGE
-    apiKey: "AIzaSyB584UiluEGaiuxIOkbS72rpod-Cd2enzY",
-    authDomain: "react-chat-app-1136f.firebaseapp.com",
-    projectId: "react-chat-app-1136f",
-    storageBucket: "react-chat-app-1136f.appspot.com",
-    messagingSenderId: "1039014190091",
-    appId: "1:1039014190091:web:34303796ed52c304923b0e",
-    measurementId: "G-NXMQS34RWX"
-    // TO CHANGE
+  apiKey: "AIzaSyBf_wlG0_bywz3BRC-uPtBQmGq0eOPabNM",
+  authDomain: "firestock-4beca.firebaseapp.com",
+  projectId: "firestock-4beca",
+  storageBucket: "firestock-4beca.appspot.com",
+  messagingSenderId: "68143485586",
+  appId: "1:68143485586:web:77e7ca78f90d7575c38c4b",
+  measurementId: "G-CFQZW28MPY"
 })
 
 const fireReducer = (state = firebase, action) => {
