@@ -18,6 +18,17 @@ function Register() {
     }
 
     const signInWithGoogle = () => {
+        const provider = new firebase.auth.GoogleAuthProvider()
+        auth.signInWithPopup(provider);
+    }
+
+    const signInWithFacebook = () => {
+        const provider = new firebase.auth.FacebookAuthProvider()
+        auth.signInWithPopup(provider);
+    }
+
+    const signInWithEmail = (e) => {
+        e.preventDefault()
         const provider = firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider);
     }
@@ -44,7 +55,7 @@ function Register() {
                                     <FaGoogle/>
                                     <p>Sign in with Google</p>
                                 </div>
-                                <div>
+                                <div onClick={signInWithFacebook}>
                                     <FaFacebookF/>
                                     <p>Sign in with Facebook</p>
                                 </div>
