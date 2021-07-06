@@ -17,6 +17,11 @@ function Register() {
         setFormState({ ...formState, [name]: value })
     }
 
+    const signInWithGoogle = () => {
+        const provider = firebase.auth.GoogleAuthProvider()
+        auth.signInWithPopup(provider);
+    }
+
     return (
         <div className="container-auth">
             {
@@ -35,7 +40,7 @@ function Register() {
                             <TextField onChange={handleFormChange} name="password" value={formState.password} label="Password" style={inputStyle} type="password" variant="outlined" error={Boolean(errState.password)} helperText={errState.password}/>
                             <TextField onChange={handleFormChange} name="password2" value={formState.password2} label="Confirm Password" style={inputStyle} type="password" variant="outlined"  error={Boolean(errState.password2)} helperText={errState.password2}/>
                             <div className="socials">
-                                <div>
+                                <div onClick={signInWithGoogle}>
                                     <FaGoogle/>
                                     <p>Sign in with Google</p>
                                 </div>
