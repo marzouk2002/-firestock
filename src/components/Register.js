@@ -29,7 +29,7 @@ function Register() {
 
     const signInWithEmail = (e) => {
         e.preventDefault()
-        const provider = firebase.auth.GoogleAuthProvider()
+        const provider = firebase.auth.EmailAuthProvider()
         auth.signInWithPopup(provider);
     }
 
