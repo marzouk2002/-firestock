@@ -27,10 +27,32 @@ function Register() {
         auth.signInWithPopup(provider);
     }
 
-    const signInWithEmail = (e) => {
+    const signInWithEmail = async (e) => {
         e.preventDefault()
-        const provider = firebase.auth.EmailAuthProvider()
-        auth.signInWithPopup(provider);
+        const { name, email, password, password2} = formState
+        // error checking
+        let errCount = 0
+        let objErr = { email: '', password: '', password2: '' }
+        setErrState(objErr)
+        if(password.length < 6) {
+            objErr = {...objErr, password: "Password should be minimum 6 characters!"}
+            errCount++
+        }
+        if(password !== password2) {
+            objErr = {...objErr, password2: "Passwords doesn't match!"}
+            errCount++
+        }
+        const checkDb = await auth.fetchSignInMethodsForEmail(email)
+        if(checkDb.length) {
+            objErr = {...objErr, email: "Email already used!"}
+            errCount++
+        }
+        setErrState(objErr)
+        if(!errCount) {
+            console.log('you can be registered')
+        }
+        // const provider = firebase.auth.EmailAuthProvider()
+        // auth.signInWithPopup(provider);
     }
 
     return (
@@ -45,7 +67,7 @@ function Register() {
                     </header>
                     <motion.main initial={{opacity:0, x:100}}
                     animate={{opacity: 1, x: 0}} transition={{duration: 0.5}} >
-                        <form autoComplete="off">
+                        <form onSubmit={signInWithEmail} autoComplete="off">
                             <TextField onChange={handleFormChange} name="name" value={formState.name} label="Name" style={inputStyle} variant="outlined" />
                             <TextField onChange={handleFormChange} name="email" value={formState.email} label="Email" style={inputStyle} variant="outlined" error={Boolean(errState.email)} helperText={errState.email}/>
                             <TextField onChange={handleFormChange} name="password" value={formState.password} label="Password" style={inputStyle} type="password" variant="outlined" error={Boolean(errState.password)} helperText={errState.password}/>
