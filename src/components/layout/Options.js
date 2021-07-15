@@ -34,7 +34,7 @@ function Options({setSelectedOp, selectedOpt}) {
                         <div className="dont">Predict future values</div>
                         
                     </div>
-                    <button className="cta" value="Basic" onClick={handleBtnClick}>Start Today</button>
+                    <button className="cta" value="basic" onClick={handleBtnClick}>Start Today</button>
                 </motion.div>
                 <motion.div initial={{opacity:0, y: 50}}
                 animate={{opacity: 1, y:0}} transition={{duration: 1}} className="sections">
@@ -49,7 +49,7 @@ function Options({setSelectedOp, selectedOpt}) {
                         <div className="have">Any currency</div>
                         <div className="have">Predict future values</div>
                     </div>
-                    <button className="cta" value="Premium" onClick={handleBtnClick}>Start Today</button>
+                    <button className="cta" value="premium" onClick={handleBtnClick}>Start Today</button>
                 </motion.div>
             </main>
         </motion.div>
