@@ -21,27 +21,11 @@ function Register() {
     const signInWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
-        .then(async ({ user }) => {
-            const { uid } = user;
-            console.log(user)
-            await usersRef.add({
-                uid, premium: selectedOpt==='premium'
-            })
-        })
-        .catch(error => console.log(error));
     }
 
     const signInWithFacebook = () => {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
-        .then(async ({ user }) => {
-            const { uid } = user;
-            console.log(user)
-            await usersRef.add({
-                uid, premium: selectedOpt==='premium'
-            })
-        })
-        .catch(error => console.log(error));
     }
 
     const signInWithEmail = async (e) => {
