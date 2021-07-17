@@ -31,6 +31,7 @@ export default function Home() {
 
     const logout = (e) => {
         e.preventDefault()
+        auth.signOut()
     }
 
     return (
@@ -40,7 +41,7 @@ export default function Home() {
                 <nav>
                     <a onClick={ScrollEffect} href="#about">about</a>
                     {
-                        !user ? 
+                        user ? 
                         <><Link to="/dashboard">dashboard</Link>
                         <Link to="/" onClick={logout}>logout</Link></> : 
                         <><Link to="/register">register</Link>
