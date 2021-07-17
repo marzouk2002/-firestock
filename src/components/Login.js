@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion'
+import { useHistory } from "react-router-dom";
 import { TextField, Button } from '@material-ui/core';
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
 
 function Login() {
-    const [ formState, setFormState ] = useState({ email: '', password: '' })
-    const [ errState, setErrState ] = useState({ email: '', password: '' })
-    const { firebase, auth } = useSelector(state => state)
+    const [ formState, setFormState ] = useState({ email: '', password: '' });
+    const [ errState, setErrState ] = useState({ email: '', password: '' });
+    const { firebase, auth } = useSelector(state => state);
+    const history = useHistory();
 
     const handleFormChange = (e) => {
         const { name, value }  = e.target
@@ -18,11 +20,13 @@ function Login() {
     const signInWithFacebook = () => {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
+        .then(cred => history.push('/dashboard'))
     }
 
     const signInWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
+        .then(cred => history.push('/dashboard'))
     }
 
     const signInWithEmail = (e) => {
@@ -31,10 +35,8 @@ function Login() {
 
         const { email, password } = formState
         auth.signInWithEmailAndPassword(email, password)
-        .then(cred => {
-            
-        })
-        .catch(({code}) =>{
+        .then(cred => history.push('/dashboard'))
+        .catch(({code}) => {
             if (code === "auth/user-not-found") {
                 setErrState({...errState, email: "Email Not found!"})
             } else if (code === "auth/wrong-password"){
