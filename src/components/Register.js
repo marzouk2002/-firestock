@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion'
 import Options from './layout/Options'
+import { useHistory } from "react-router-dom";
 import { TextField, Button } from '@material-ui/core';
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
 
@@ -12,6 +13,7 @@ function Register() {
     const [ errState, setErrState ] = useState({ email: '', password: '', password2: '' })
     const { firebase, auth, firestore } = useSelector(state => state)
     const usersRef = firestore.collection('users');
+    const history = useHistory();
 
     const handleFormChange = (e) => {
         const { name, value }  = e.target
@@ -28,6 +30,7 @@ function Register() {
                 uid, premium: selectedOpt==='premium'
             })
         })
+        .then(res => history.push('/dashboard'))
         .catch(error => console.log(error));
     }
 
@@ -41,6 +44,7 @@ function Register() {
                 uid, premium: selectedOpt==='premium'
             })
         })
+        .then(res => history.push('/dashboard'))
         .catch(error => console.log(error));
     }
 
@@ -74,8 +78,9 @@ function Register() {
                 await usersRef.add({
                     uid, name, premium: selectedOpt==='premium'
                 })
-              })
-              .catch(error => console.log(error));
+            })
+            .then(res => history.push('/dashboard'))
+            .catch(error => console.log(error));
         }
     }
 
