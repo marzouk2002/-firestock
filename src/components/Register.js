@@ -99,11 +99,11 @@ function Register() {
                             <div className="socials">
                                 <div onClick={signInWithGoogle}>
                                     <FaGoogle/>
-                                    <p>Sign in with Google</p>
+                                    <p>Sign up with Google</p>
                                 </div>
                                 <div onClick={signInWithFacebook}>
                                     <FaFacebookF/>
-                                    <p>Sign in with Facebook</p>
+                                    <p>Sign up with Facebook</p>
                                 </div>
                             </div>
                             <div className="btns">
