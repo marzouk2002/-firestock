@@ -15,6 +15,16 @@ function Login() {
         setFormState({ ...formState, [name]: value })
     }
 
+    const signInWithFacebook = () => {
+        const provider = new firebase.auth.FacebookAuthProvider()
+        auth.signInWithPopup(provider)
+    }
+
+    const signInWithGoogle = () => {
+        const provider = new firebase.auth.GoogleAuthProvider()
+        auth.signInWithPopup(provider)
+    }
+
     return (
         <div className="container-auth">
             <div className="regisLoginForm-wrapper">
@@ -29,11 +39,11 @@ function Login() {
                             <TextField onChange={handleFormChange} name="email" value={formState.email} label="Email" style={inputStyle} variant="outlined"  error={Boolean(errState.email)} helperText={errState.email}/>
                             <TextField onChange={handleFormChange} name="password" value={formState.password} label="Password" style={inputStyle} type="password" variant="outlined"  error={Boolean(errState.password)} helperText={errState.password}/>
                             <div className="socials">
-                                <div>
+                                <div onClick={signInWithGoogle}>
                                     <FaGoogle/>
                                     <p>Login with Google</p>
                                 </div>
-                                <div>
+                                <div onClick={signInWithFacebook}>
                                     <FaFacebookF/>
                                     <p>Login with Facebook</p>
                                 </div>
