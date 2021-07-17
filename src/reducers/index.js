@@ -23,6 +23,7 @@ const authReducer = (state = firebase.auth(), action) => {
 }
 
 const storeReducer = (state = firebase.firestore(), action) => {
+  state.settings({ timestampsInSnapshots: true })
   return state
 }
 

@@ -27,7 +27,11 @@ export default function Home() {
         $('html, body').animate({
             scrollTop: scrollPosition
         }, animationDuration);
-    } 
+    }
+
+    const logout = (e) => {
+        e.preventDefault()
+    }
 
     return (
         <div className="container-home">
@@ -35,8 +39,13 @@ export default function Home() {
                 <img src={logo} alt="logo" className="logo"/>
                 <nav>
                     <a onClick={ScrollEffect} href="#about">about</a>
-                    <Link to="/register">register</Link>
-                    <Link to="/login">login</Link>
+                    {
+                        !user ? 
+                        <><Link to="/dashboard">dashboard</Link>
+                        <Link to="/" onClick={logout}>logout</Link></> : 
+                        <><Link to="/register">register</Link>
+                        <Link to="/login">login</Link></>
+                    }
                 </nav>
             </header>
             <main>
