@@ -8,7 +8,7 @@ import { FaGoogle, FaFacebookF } from "react-icons/fa";
 function Login() {
     const [ formState, setFormState ] = useState({ email: '', password: '' })
     const [ errState, setErrState ] = useState({ email: '', password: '' })
-    const { firebase, auth, firestore } = useSelector(state => state)
+    const { firebase, auth } = useSelector(state => state)
 
     const handleFormChange = (e) => {
         const { name, value }  = e.target
@@ -25,6 +25,24 @@ function Login() {
         auth.signInWithPopup(provider)
     }
 
+    const signInWithEmail = (e) => {
+        e.preventDefault()
+        setErrState({ email: '', password: ''})
+
+        const { email, password } = formState
+        auth.signInWithEmailAndPassword(email, password)
+        .then(cred => {
+            
+        })
+        .catch(({code}) =>{
+            if (code === "auth/user-not-found") {
+                setErrState({...errState, email: "Email Not found!"})
+            } else if (code === "auth/wrong-password"){
+                setErrState({...errState, password: "Wrong Password!"})
+            }
+        })
+    }
+
     return (
         <div className="container-auth">
             <div className="regisLoginForm-wrapper">
@@ -35,9 +53,9 @@ function Login() {
                     </header>
                     <motion.main initial={{opacity:0, x:100}}
                     animate={{opacity: 1, x: 0}} transition={{duration: 0.8, delay: 0.1}} >
-                        <form autoComplete="off">
-                            <TextField onChange={handleFormChange} name="email" value={formState.email} label="Email" style={inputStyle} variant="outlined"  error={Boolean(errState.email)} helperText={errState.email}/>
-                            <TextField onChange={handleFormChange} name="password" value={formState.password} label="Password" style={inputStyle} type="password" variant="outlined"  error={Boolean(errState.password)} helperText={errState.password}/>
+                        <form onSubmit={signInWithEmail} autoComplete="off">
+                            <TextField onChange={handleFormChange} name="email" type="email" required value={formState.email} label="Email" style={inputStyle} variant="outlined"  error={Boolean(errState.email)} helperText={errState.email}/>
+                            <TextField onChange={handleFormChange} name="password" value={formState.password} label="Password" style={inputStyle} type="password" required variant="outlined"  error={Boolean(errState.password)} helperText={errState.password}/>
                             <div className="socials">
                                 <div onClick={signInWithGoogle}>
                                     <FaGoogle/>
