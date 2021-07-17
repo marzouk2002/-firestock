@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useSelector } from 'react-redux'
 import $ from 'jquery'
+// images
 import logo from '../images/logo.svg'
 import instagram from '../images/instagram.svg'
 import twitter from '../images/twitter.svg'
@@ -9,6 +12,8 @@ import github from '../images/github.svg'
 import linkedIn from '../images/linkedIn.svg'
 
 export default function Home() {
+    const { auth } = useSelector(state => state)
+    const [ user ] = useAuthState(auth)
 
     const ScrollEffect = (e) => {
         e.preventDefault();
