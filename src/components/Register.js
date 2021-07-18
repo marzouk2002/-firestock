@@ -31,12 +31,8 @@ function Register() {
     const signUpWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
-        .then(async ({ user }) => {
-            const { uid } = user;
-            console.log(user)
-            await usersRef.doc(uid).set({
-                uid, premium: selectedOpt==='premium'
-            })
+        .then(({ user: {uid, displayName} }) => {
+            registerToDB(uid, displayName)
         })
         .then(redDash)
         .catch(error => console.log(error));
@@ -45,12 +41,8 @@ function Register() {
     const signUpWithFacebook = () => {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
-        .then(async ({ user }) => {
-            const { uid } = user;
-            console.log(user)
-            await usersRef.doc(uid).set({
-                uid, premium: selectedOpt==='premium'
-            })
+        .then(({ user: {uid, displayName} }) => {
+            registerToDB(uid, displayName)
         })
         .then(redDash)
         .catch(error => console.log(error));
@@ -72,7 +64,6 @@ function Register() {
             errBool = true
         }
         const checkDb = await auth.fetchSignInMethodsForEmail(email)
-        console.log(checkDb)
         if(checkDb && checkDb.length) {
             objErr = {...objErr, email: "Email already used!"}
             errBool = true
@@ -81,11 +72,8 @@ function Register() {
             return setErrState(objErr)
         } else {
             auth.createUserWithEmailAndPassword(email, password)
-            .then(async userCredential => {
-                const { uid } = userCredential.user;
-                await usersRef.doc(uid).set({
-                    uid, name, premium: selectedOpt==='premium'
-                })
+            .then(({ user }) => { 
+                registerToDB(user.uid, name)
             })
             .then(redDash)
             .catch(error => console.log(error));
