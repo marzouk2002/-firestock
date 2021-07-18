@@ -12,6 +12,9 @@ function Login() {
     const { firebase, auth } = useSelector(state => state);
     const history = useHistory();
 
+    // redirect to dashboard
+    const redDash = () => history.push('/dashboard')
+
     const handleFormChange = (e) => {
         const { name, value }  = e.target
         setFormState({ ...formState, [name]: value })
@@ -20,13 +23,13 @@ function Login() {
     const signInWithFacebook = () => {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
-        .then(cred => history.push('/dashboard'))
+        .then(redDash)
     }
 
     const signInWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
-        .then(cred => history.push('/dashboard'))
+        .then(redDash)
     }
 
     const signInWithEmail = (e) => {
@@ -35,7 +38,7 @@ function Login() {
 
         const { email, password } = formState
         auth.signInWithEmailAndPassword(email, password)
-        .then(cred => history.push('/dashboard'))
+        .then(redDash)
         .catch(({code}) => {
             if (code === "auth/user-not-found") {
                 setErrState({...errState, email: "Email Not found!"})
