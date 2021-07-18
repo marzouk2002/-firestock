@@ -15,6 +15,9 @@ function Register() {
     const usersRef = firestore.collection('users');
     const history = useHistory();
 
+    // redirect to dashboard
+    const redDash = () => history.push('/dashboard')
+
     const handleFormChange = (e) => {
         const { name, value }  = e.target
         setFormState({ ...formState, [name]: value })
@@ -30,7 +33,7 @@ function Register() {
                 uid, premium: selectedOpt==='premium'
             })
         })
-        .then(res => history.push('/dashboard'))
+        .then(redDash)
         .catch(error => console.log(error));
     }
 
@@ -44,7 +47,7 @@ function Register() {
                 uid, premium: selectedOpt==='premium'
             })
         })
-        .then(res => history.push('/dashboard'))
+        .then(redDash)
         .catch(error => console.log(error));
     }
 
@@ -52,24 +55,24 @@ function Register() {
         e.preventDefault()
         const { name, email, password, password2} = formState
         // error checking
-        let errCount = false
+        let errBool = false
         let objErr = { email: '', password: '', password2: '' }
         setErrState(objErr)
         if(password.length < 6) {
             objErr = {...objErr, password: "Password should be minimum 6 characters!"}
-            errCount = true
+            errBool = true
         }
         if(password !== password2) {
             objErr = {...objErr, password2: "Passwords doesn't match!"}
-            errCount = true
+            errBool = true
         }
         const checkDb = await auth.fetchSignInMethodsForEmail(email)
         console.log(checkDb)
         if(checkDb && checkDb.length) {
             objErr = {...objErr, email: "Email already used!"}
-            errCount = true
+            errBool = true
         }
-        if(errCount) {
+        if(errBool) {
             return setErrState(objErr)
         } else {
             auth.createUserWithEmailAndPassword(email, password)
@@ -79,7 +82,7 @@ function Register() {
                     uid, name, premium: selectedOpt==='premium'
                 })
             })
-            .then(res => history.push('/dashboard'))
+            .then(redDash)
             .catch(error => console.log(error));
         }
     }
