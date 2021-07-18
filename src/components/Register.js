@@ -18,6 +18,11 @@ function Register() {
     // redirect to dashboard
     const redDash = () => history.push('/dashboard')
 
+    // register users to collection
+    const registerToDB = (uid, name) => usersRef.doc(uid).set({
+        name, premium: selectedOpt==='premium'
+    })
+
     const handleFormChange = (e) => {
         const { name, value }  = e.target
         setFormState({ ...formState, [name]: value })
@@ -29,7 +34,7 @@ function Register() {
         .then(async ({ user }) => {
             const { uid } = user;
             console.log(user)
-            await usersRef.add({
+            await usersRef.doc(uid).set({
                 uid, premium: selectedOpt==='premium'
             })
         })
@@ -43,7 +48,7 @@ function Register() {
         .then(async ({ user }) => {
             const { uid } = user;
             console.log(user)
-            await usersRef.add({
+            await usersRef.doc(uid).set({
                 uid, premium: selectedOpt==='premium'
             })
         })
@@ -78,7 +83,7 @@ function Register() {
             auth.createUserWithEmailAndPassword(email, password)
             .then(async userCredential => {
                 const { uid } = userCredential.user;
-                await usersRef.add({
+                await usersRef.doc(uid).set({
                     uid, name, premium: selectedOpt==='premium'
                 })
             })
