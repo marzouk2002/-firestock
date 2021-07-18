@@ -19,8 +19,8 @@ function Register() {
     const redDash = () => history.push('/dashboard')
 
     // register users to collection
-    const registerToDB = (uid, name) => usersRef.doc(uid).set({
-        name, premium: selectedOpt==='premium'
+    const registerToDB = (uid, name, picture= null) => usersRef.doc(uid).set({
+        name, premium: selectedOpt==='premium', picture
     })
 
     const handleFormChange = (e) => {
@@ -31,8 +31,8 @@ function Register() {
     const signUpWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
-        .then(({ user: {uid, displayName} }) => {
-            registerToDB(uid, displayName)
+        .then(({ user: {uid, displayName, photoURL} }) => {
+            registerToDB(uid, displayName, photoURL)
         })
         .then(redDash)
         .catch(error => console.log(error));
@@ -41,8 +41,8 @@ function Register() {
     const signUpWithFacebook = () => {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
-        .then(({ user: {uid, displayName} }) => {
-            registerToDB(uid, displayName)
+        .then(({user: {uid, displayName, photoURL}}) => {
+            registerToDB(uid, displayName, photoURL)
         })
         .then(redDash)
         .catch(error => console.log(error));
@@ -72,7 +72,7 @@ function Register() {
             return setErrState(objErr)
         } else {
             auth.createUserWithEmailAndPassword(email, password)
-            .then(({ user }) => { 
+            .then(({ user }) => {
                 registerToDB(user.uid, name)
             })
             .then(redDash)
