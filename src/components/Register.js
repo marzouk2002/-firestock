@@ -44,8 +44,9 @@ function Register() {
     const signUpWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
-        .then(({ user: {uid, displayName, photoURL} }) => {
+        .then(({ user: {uid, displayName, photoURL, email} }) => {
             registerToDB(uid, displayName, photoURL)
+            setPremium(email)
         })
         .then(redDash)
         .catch(error => console.log(error));
@@ -55,8 +56,9 @@ function Register() {
     const signUpWithFacebook = () => {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
-        .then(({user: {uid, displayName, photoURL}}) => {
+        .then(({user: {uid, displayName, photoURL, email}}) => {
             registerToDB(uid, displayName, photoURL)
+            setPremium(email)
         })
         .then(redDash)
         .catch(error => console.log(error));
@@ -89,6 +91,7 @@ function Register() {
             auth.createUserWithEmailAndPassword(email, password)
             .then(({ user }) => {
                 registerToDB(user.uid, name)
+                setPremium(email)
             })
             .then(redDash)
             .catch(error => console.log(error));
