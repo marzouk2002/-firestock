@@ -20,14 +20,27 @@ function Register() {
 
     // register users to collection
     const registerToDB = (uid, name, picture= null) => usersRef.doc(uid).set({
-        name, premium: selectedOpt==='premium', picture
+        name, picture
     })
 
+    // add premium claim
+    const setPremium = (email) => {
+        if(selectedOpt === "premium") {
+            firefunc.httpsCallable('setPremiumAccount')({ email })
+            .then(result => {
+                console.log(result);
+            });
+        }
+    }
+
+    // handle form chage
     const handleFormChange = (e) => {
         const { name, value }  = e.target
         setFormState({ ...formState, [name]: value })
     }
 
+    // REGISTER
+    // with google
     const signUpWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
@@ -38,6 +51,7 @@ function Register() {
         .catch(error => console.log(error));
     }
 
+    // with facebook
     const signUpWithFacebook = () => {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
@@ -48,6 +62,7 @@ function Register() {
         .catch(error => console.log(error));
     }
 
+    // with email
     const signUpWithEmail = async (e) => {
         e.preventDefault()
         const { name, email, password, password2} = formState
