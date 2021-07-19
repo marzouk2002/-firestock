@@ -3,6 +3,7 @@ import { combineReducers } from 'redux'
 import firebase from 'firebase/app';
 import 'firebase/firestore'
 import 'firebase/auth'
+import 'firebase/functions'
 
 firebase.initializeApp({
   apiKey: "AIzaSyBf_wlG0_bywz3BRC-uPtBQmGq0eOPabNM",
@@ -27,10 +28,15 @@ const storeReducer = (state = firebase.firestore(), action) => {
   return state
 }
 
+const funcReducer = (state = firebase.functions(), action) => {
+  return state
+}
+
 const allReducers = combineReducers({
     firebase: fireReducer,
     auth: authReducer,
-    firestore: storeReducer
+    firestore: storeReducer,
+    firefunc: funcReducer
 })
 
 export default allReducers
