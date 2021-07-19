@@ -9,12 +9,16 @@ function Dashboard() {
     const [ user ] = useAuthState(auth)
     const usersRef = firestore.collection('users');
     const [ userInfo, setUserInfo ] = useState({})
+    const [ isPremium, setIsPremium ] = useState(false)
     const history = useHistory();
 
     useEffect(() => {
         if(!user) return
         usersRef.doc(user.uid).get()
         .then(res => setUserInfo(res.data()))
+        user.getIdTokenResult().then(idTokenResult => {
+            setIsPremium(Boolean(idTokenResult.claims.premium))
+        });
     }, [ user ])
 
     return (
