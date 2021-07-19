@@ -11,7 +11,7 @@ function Register() {
     const [ selectedOpt, setSelectedOp ] = useState(null)
     const [ formState, setFormState ] = useState({ name: '', email: '', password: '', password2: ''})
     const [ errState, setErrState ] = useState({ email: '', password: '', password2: '' })
-    const { firebase, auth, firestore } = useSelector(state => state)
+    const { firebase, auth, firestore, firefunc } = useSelector(state => state)
     const usersRef = firestore.collection('users');
     const history = useHistory();
 
