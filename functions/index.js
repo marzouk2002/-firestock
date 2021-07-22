@@ -10,7 +10,7 @@ exports.setPremiumAccount = functions.https.onCall((data, context) => {
       })
     }).then(() => {
       return {
-        message: `Success! ${data.email} account has been made an premium.`
+        message: `Success! ${data.email} account is premium now.`
       }
     }).catch(err => {
       return err;
