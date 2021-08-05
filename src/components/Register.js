@@ -25,7 +25,7 @@ function Register() {
 
     // add premium claim
     const setPremium = (email) => {
-        if(selectedOpt === "premium") {
+        if(selectedOpt === "Premium") {
             firefunc.httpsCallable('setPremiumAccount')({ email })
             .then(result => {
                 console.log(result);
@@ -106,7 +106,7 @@ function Register() {
                     <header>
                         <motion.h2 initial={{opacity:0}}
                         animate={{opacity: 1}} transition={{duration: 0.8}} >
-                        {selectedOpt} account</motion.h2>
+                        {selectedOpt} Account</motion.h2>
                     </header>
                     <motion.main initial={{opacity:0, x:100}}
                     animate={{opacity: 1, x: 0}} transition={{duration: 0.5}} >
