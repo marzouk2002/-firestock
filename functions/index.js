@@ -36,6 +36,10 @@ exports.handlePayment = functions.https.onCall(({ id, email }) => {
           ],
         });
     })
-    .then(charge => charge)
+    .then(charge => {
+      return {
+        message: `Success! Subscription created.`
+      }
+    })
     .catch(err => err)
 })
