@@ -15,7 +15,7 @@ function Options({setSelectedOp, selectedOpt}) {
     }
 
     const onToken = (token) => {
-
+        console.log(token)
     }
 
     return (
@@ -57,7 +57,7 @@ function Options({setSelectedOp, selectedOpt}) {
                     </div>
                     <StripeCheckout
                     token={onToken}
-                    stripeKey={process.env.PUB_STR_K}
+                    stripeKey="pk_test_51JL7huEtWyVXRbR8ys9BH5YKN3lm1FFsm73GzBDSDimQYfSnuKjf2LwP0vi9jAXfFzjLQbwRjPQ1ySC3Zk6UNFdP00C2BrjrBy"
                     amount="1000"
                     image= {Logo}
                     name="FireStock Premium Account"
