@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import StripeCheckout from 'react-stripe-checkout';
+import Logo from '../../images/logo.png'
 
 function Options({setSelectedOp, selectedOpt}) {
     const [ anim, setAnim ] = useState({})
@@ -11,6 +12,10 @@ function Options({setSelectedOp, selectedOpt}) {
 
         setAnim({ scale: 0.5, opacity:0 })
         setTimeout(()=>setSelectedOp(value), 500)
+    }
+
+    const onToken = (token) => {
+
     }
 
     return (
@@ -51,14 +56,12 @@ function Options({setSelectedOp, selectedOpt}) {
                         <div className="have">Predict future values</div>
                     </div>
                     <StripeCheckout
-                    stripeKey="pk_test_51JL7huEtWyVXRbR8ys9BH5YKN3lm1FFsm73GzBDSDimQYfSnuKjf2LwP0vi9jAXfFzjLQbwRjPQ1ySC3Zk6UNFdP00C2BrjrBy"
+                    token={onToken}
+                    stripeKey={process.env.PUB_STR_K}
                     amount="1000"
-                    token={(e) => {
-                        e.preventDefault()
-                        console.log("hello")
-                    }}
-                    name="Web Development Ebook"
-                    description="Ebook written by Marzouk Youssouf"
+                    image= {Logo}
+                    name="FireStock Premium Account"
+                    description="Monthly Subscription for $10"
                     locale="auto">
                         <button className="cta" value="Premium">Start Today</button>
                     </StripeCheckout>
