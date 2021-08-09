@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import StripeCheckout from 'react-stripe-checkout';
 
 function Options({setSelectedOp, selectedOpt}) {
     const [ anim, setAnim ] = useState({})
@@ -49,7 +50,19 @@ function Options({setSelectedOp, selectedOpt}) {
                         <div className="have">Any currency</div>
                         <div className="have">Predict future values</div>
                     </div>
-                    <button className="cta" value="Premium" onClick={handleBtnClick}>Start Today</button>
+                    <StripeCheckout
+                    stripeKey="pk_test_51JL7huEtWyVXRbR8ys9BH5YKN3lm1FFsm73GzBDSDimQYfSnuKjf2LwP0vi9jAXfFzjLQbwRjPQ1ySC3Zk6UNFdP00C2BrjrBy"
+                    amount="1000"
+                    name="Web Development Ebook"
+                    description="Ebook written by Marzouk Youssouf"
+                    locale="auto"
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        console.log("hello")
+                    }
+                    }>
+                        <button className="cta" value="Premium">Start Today</button>
+                    </StripeCheckout>
                 </motion.div>
             </main>
         </motion.div>
