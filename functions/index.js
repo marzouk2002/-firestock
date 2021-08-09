@@ -22,18 +22,18 @@ exports.setPremiumAccount = functions.https.onCall((data, context) => {
 
 // handle Payment via stripe
 exports.handlePayment = functions.https.onCall(({ id, email }) => {
-  const amount= 1000
-  stripe.customers.create({
-    email: email,
-    source: id
-  })
-  .then(customer => {
-      stripe.charges.create({
-          amount,
-          description: 'Purchase a EBook',
-          currency: 'usd',
-          customer: customer.id
-      })
-  })
-  .then(charge => res.render('success'))
+  return stripe.customers.create({
+      email: email,
+      source: id
+    })
+    .then(customer => {
+        stripe.subscriptions.create({
+          customer: customer.id,
+          items: [
+            { price: process.env.PRICE_ID },
+          ],
+        });
+    })
+    .then(charge => charge)
+    .catch(err => err)
 })
