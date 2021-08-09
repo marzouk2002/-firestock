@@ -17,8 +17,10 @@ function Options({setSelectedOp, selectedOpt}) {
     console.log(firefunc.httpsCallable("handlePayment"))
 
     const onToken = (token) => {
-        
-        console.log(firefunc.httpsCallable("handlePayment")(token))
+        console.log(token)
+       firefunc.httpsCallable("handlePayment")(token)
+       .then(res=> console.log(res))
+       .catch(err => console.log(err))
     }
 
     return (
