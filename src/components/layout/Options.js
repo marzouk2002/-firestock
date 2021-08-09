@@ -53,14 +53,13 @@ function Options({setSelectedOp, selectedOpt}) {
                     <StripeCheckout
                     stripeKey="pk_test_51JL7huEtWyVXRbR8ys9BH5YKN3lm1FFsm73GzBDSDimQYfSnuKjf2LwP0vi9jAXfFzjLQbwRjPQ1ySC3Zk6UNFdP00C2BrjrBy"
                     amount="1000"
-                    name="Web Development Ebook"
-                    description="Ebook written by Marzouk Youssouf"
-                    locale="auto"
-                    onSubmit={(e) => {
+                    token={(e) => {
                         e.preventDefault()
                         console.log("hello")
-                    }
-                    }>
+                    }}
+                    name="Web Development Ebook"
+                    description="Ebook written by Marzouk Youssouf"
+                    locale="auto">
                         <button className="cta" value="Premium">Start Today</button>
                     </StripeCheckout>
                 </motion.div>
