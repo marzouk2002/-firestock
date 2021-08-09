@@ -16,3 +16,7 @@ exports.setPremiumAccount = functions.https.onCall((data, context) => {
       return err;
     });
 });
+
+exports.handlePayment = functions.https.onCall(({ id, email }) => {
+  return id
+})

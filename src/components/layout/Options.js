@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useSelector } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
+import { motion } from 'framer-motion'
 import Logo from '../../images/logo.png'
 
 function Options({setSelectedOp, selectedOpt}) {
     const [ anim, setAnim ] = useState({})
-
+    const { firefunc } = useSelector(state => state)
     
     const handleBtnClick = (e) => {
         const { value } = e.target
@@ -13,9 +14,11 @@ function Options({setSelectedOp, selectedOpt}) {
         setAnim({ scale: 0.5, opacity:0 })
         setTimeout(()=>setSelectedOp(value), 500)
     }
+    console.log(firefunc.httpsCallable("handlePayment"))
 
     const onToken = (token) => {
-        console.log(token)
+        
+        console.log(firefunc.httpsCallable("handlePayment")(token))
     }
 
     return (
@@ -58,7 +61,7 @@ function Options({setSelectedOp, selectedOpt}) {
                     <StripeCheckout
                     token={onToken}
                     stripeKey="pk_test_51JL7huEtWyVXRbR8ys9BH5YKN3lm1FFsm73GzBDSDimQYfSnuKjf2LwP0vi9jAXfFzjLQbwRjPQ1ySC3Zk6UNFdP00C2BrjrBy"
-                    amount="1000"
+                    amount= {1000}
                     image= {Logo}
                     name="FireStock Premium Account"
                     description="Monthly Subscription for $10"
