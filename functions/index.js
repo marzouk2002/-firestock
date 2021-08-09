@@ -1,7 +1,9 @@
 require('dotenv').config()
 const functions = require("firebase-functions");
 const admin = require('firebase-admin');
-const stripe = require('stripe')(process.env.PV_STR_KEY)
+const PV_STR_KEY = "sk_test_51JL7huEtWyVXRbR8ZAPk2EI9MZayptBd5i3VTSLy2CeIPGWRZ953d82RtbT7HfAxuiqUXJJlrRyNJzwRJNgcfOzi00zhdqx1b7"
+const PRICE_ID = "price_1JMWkXEtWyVXRbR8PNkbBddf"
+const stripe = require('stripe')(PV_STR_KEY)
 admin.initializeApp();
 
 // Add a Premium Claim to Users
@@ -30,7 +32,7 @@ exports.handlePayment = functions.https.onCall(({ id, email }) => {
         stripe.subscriptions.create({
           customer: customer.id,
           items: [
-            { price: process.env.PRICE_ID },
+            { price: PRICE_ID },
           ],
         });
     })
