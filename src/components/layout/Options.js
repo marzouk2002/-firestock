@@ -14,12 +14,13 @@ function Options({setSelectedOp, selectedOpt}) {
         setAnim({ scale: 0.5, opacity:0 })
         setTimeout(()=>setSelectedOp(value), 500)
     }
-    console.log(firefunc.httpsCallable("handlePayment"))
 
     const onToken = (token) => {
-        console.log(token)
        firefunc.httpsCallable("handlePayment")(token)
-       .then(res=> console.log(res))
+       .then(res => {
+            setAnim({ scale: 0.5, opacity:0 })
+            setTimeout(()=>setSelectedOp("Premium"), 500) 
+       })
        .catch(err => console.log(err))
     }
 
