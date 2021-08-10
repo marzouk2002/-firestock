@@ -53,7 +53,7 @@ export default function Home() {
                 <section className="sec-1">
                     <div className="content">
                         <h1>FireStock</h1>
-                        <h3>the best stock info app</h3>
+                        <h3>the best stock traking app</h3>
                         <Link to="/register">join now</Link>
                     </div>
                 </section>
