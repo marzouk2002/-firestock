@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory } from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { useCollectionData } from 'react-firebase-hooks/firestore'
+import Header from './Dashboard/Header';
 
 function Dashboard() {
     const { firebase, auth, firestore } = useSelector(state => state)
@@ -23,7 +23,10 @@ function Dashboard() {
 
     return (
         <>
-            {!user ? history.push('/login') : <h1>Dashboard</h1>}
+            {!user ? history.push('/login') : 
+            <>
+                <Header/>
+            </>}
         </>
     )
 }

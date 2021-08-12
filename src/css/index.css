@@ -239,6 +239,15 @@ h3 {
   background-color: #395693;
 }
 
+header {
+  width: 100%;
+  height: 10vh;
+}
+
+body {
+  width: 100%;
+}
+
 .options-wrapper {
   z-index: 5;
   margin: 15vh 0;
