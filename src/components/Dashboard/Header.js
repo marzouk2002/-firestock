@@ -12,6 +12,9 @@ function Header({ userInfo }) {
                 <div className="user-logo" tabIndex="0">
                     <img src={ picture ? picture : User } alt="user icon"/>
                 </div>
+                <div className="user-info">
+                    
+                </div>
             </div>
         </header>
     )
