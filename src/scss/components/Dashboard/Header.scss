@@ -1,6 +1,6 @@
 @use '../../abstracts';
 
-header {
+.d-header {
   width: 100%;
   height: 10vh;
   display: flex;
@@ -8,8 +8,29 @@ header {
   align-items: center;
   padding: 0 5%;
 
-  & .logo {
+  .logo {
     height: 70%;
     width: auto;
+  }
+
+  .account-panel {
+    width: 6vh;
+    height: 6vh;
+  }
+
+  .user-logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: #111 2px solid;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+
+    & img {
+      width: 90%;
+      height: 90%;
+      opacity: 0.9;
+    }
   }
 }

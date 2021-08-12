@@ -4,10 +4,12 @@ import User from '../../images/user.svg'
 
 function Header() {
     return (
-        <header>
+        <header className="d-header">
             <img src={Logo} alt="Logo" className="logo"/>
             <div className="account-panel">
-                <img className="user-logo" src={User} alt="user icon"/>
+                <div className="user-logo">
+                    <img src={User} alt="user icon"/>
+                </div>
             </div>
         </header>
     )
