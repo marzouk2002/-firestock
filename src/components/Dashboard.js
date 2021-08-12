@@ -13,9 +13,11 @@ function Dashboard() {
     const history = useHistory();
 
     useEffect(() => {
+        console.log(user)
         if(!user) return
         usersRef.doc(user.uid).get()
-        .then(res => setUserInfo(res.data()))
+            .then(res => setUserInfo(res.data()))
+            .catch(err => console.err({msg: 'we got an error' ,err}))
         user.getIdTokenResult().then(idTokenResult => {
             setIsPremium(Boolean(idTokenResult.claims.premium))
         });
@@ -25,7 +27,7 @@ function Dashboard() {
         <>
             {!user ? history.push('/login') : 
             <>
-                <Header/>
+                <Header userInfo={userInfo}/>
             </>}
         </>
     )
