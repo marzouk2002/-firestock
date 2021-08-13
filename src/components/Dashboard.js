@@ -13,7 +13,6 @@ function Dashboard() {
     const history = useHistory();
 
     useEffect(() => {
-        console.log(user)
         if(!user) return
         usersRef.doc(user.uid).get()
             .then(res => setUserInfo(res.data()))
