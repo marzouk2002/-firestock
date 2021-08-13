@@ -18,11 +18,15 @@ function Header({ userInfo, premium }) {
                     viewUser && 
                     <div className="user-info">
                         <div className="user-pic">
-                            <img src={ picture ? picture : User } alt="user profile"/>
+                            <img src={ !picture ? picture : User } alt="user profile"/>
                         </div>
                         <p>{name}</p>
                         <hr/>
                         {
+                            !premium && <>
+                                <p>fff</p>
+                                <hr/>
+                            </>
 
                         }
                         <Button variant="outlined" onClick={()=> console.log('rr')}>Sign out</Button>
