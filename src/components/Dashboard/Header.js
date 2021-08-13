@@ -29,7 +29,7 @@ function Header({ userInfo, premium }) {
                             </>
 
                         }
-                        <Button variant="outlined" onClick={()=> console.log('rr')}>Sign out</Button>
+                        <Button color="secondary" variant="outlined" onClick={()=> console.log('rr')}>Sign out</Button>
                     </div>
                 }
             </div>
