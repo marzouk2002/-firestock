@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Button } from '@material-ui/core';
 import Logo from '../../images/logo.svg'
 import User from '../../images/user.svg'
 
 function Header({ userInfo, premium }) {
     const [ viewUser, setViewUser ] = useState(false)
+    const { auth } = useSelector(state => state)
     const { picture, name } = userInfo
 
     return (
@@ -29,7 +31,7 @@ function Header({ userInfo, premium }) {
                             </>
 
                         }
-                        <Button color="secondary" variant="outlined" onClick={()=> console.log('rr')}>Sign out</Button>
+                        <Button color="secondary" variant="outlined" onClick={()=>auth.signOut()}>Sign out</Button>
                     </div>
                 }
             </div>
