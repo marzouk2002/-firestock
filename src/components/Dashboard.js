@@ -27,7 +27,7 @@ function Dashboard() {
         <>
             {!user ? history.push('/login') : 
             <>
-                <Header userInfo={userInfo}/>
+                <Header userInfo={userInfo} premium={isPremium}/>
             </>}
         </>
     )
