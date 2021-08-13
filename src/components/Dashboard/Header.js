@@ -12,25 +12,20 @@ function Header({ userInfo, premium }) {
     const handleShowAndHide = (e) => {
         const isShow = Boolean(e.target.dataset.show)
         const isCard = Boolean(e.target.dataset.card)
-        console.log(isShow, isCard, viewUser)
-        if(isShow) {
-            setViewUser(!viewUser)
-        } else if(!isCard) {
+        if(!isShow && !isCard) {
             setViewUser(false)
         }
     }
 
     useEffect(() => {
-        document.body.removeEventListener('click', handleShowAndHide)
         document.body.addEventListener("click", handleShowAndHide)
-        
     }, [])
 
     return (
         <header className="d-header">
             <img src={Logo} alt="Logo" className="logo"/>
             <div className="account-panel">
-                <div className="user-logo" tabIndex="0" data-show="true">
+                <div className="user-logo" tabIndex="0" data-show="true" onClick={()=>setViewUser(!viewUser)}>
                     <img src={ picture ? picture : User } alt="user icon" data-show="true"/>
                 </div>
                 { 
