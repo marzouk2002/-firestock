@@ -10,11 +10,8 @@ function Header({ userInfo, premium }) {
     const { picture, name } = userInfo
 
     const handleShowAndHide = (e) => {
-        const isShow = Boolean(e.target.dataset.show)
-        const isCard = Boolean(e.target.dataset.card)
-        if(!isShow && !isCard) {
-            setViewUser(false)
-        }
+        const isAccount = Boolean(e.target.dataset.account)
+        if(!isAccount) setViewUser(false)
     }
 
     useEffect(() => {
@@ -25,17 +22,17 @@ function Header({ userInfo, premium }) {
         <header className="d-header">
             <img src={Logo} alt="Logo" className="logo"/>
             <div className="account-panel">
-                <div className="user-logo" tabIndex="0" data-show="true" onClick={()=>setViewUser(!viewUser)}>
-                    <img src={ picture ? picture : User } alt="user icon" data-show="true"/>
+                <div className="user-logo" tabIndex="0" data-account="true" onClick={()=>setViewUser(!viewUser)}>
+                    <img src={ picture ? picture : User } alt="user icon" data-account="true"/>
                 </div>
                 { 
                     viewUser && 
-                    <div className="user-info" data-card='true'>
-                        <div className="user-pic" data-card='true'>
-                            <img src={ picture ? picture : User } alt="user profile" data-card='true'/>
+                    <div className="user-info" data-account='true'>
+                        <div className="user-pic" data-account='true'>
+                            <img src={ picture ? picture : User } alt="user profile" data-account='true'/>
                         </div>
-                        <p data-card='true'>{name}</p>
-                        <hr data-card='true'/>
+                        <p data-account='true'>{name}</p>
+                        <hr data-account='true'/>
                         {
                             premium && <>
                                 <p>fff</p>
@@ -43,7 +40,7 @@ function Header({ userInfo, premium }) {
                             </>
 
                         }
-                        <Button color="secondary" variant="outlined" onClick={()=>auth.signOut()} data-card='true'>Sign out</Button>
+                        <Button color="secondary" variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Sign out</Button>
                     </div>
                 }
             </div>
