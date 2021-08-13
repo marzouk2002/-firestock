@@ -24,7 +24,8 @@ function Header({ userInfo }) {
                     <img src={ picture ? picture : User } alt="user icon"/>
                 </div>
                 { 
-                    viewUser && <div className="user-info" tabIndex="0" onBlur={()=>setViewUser(false)} ref={userInfoCard}>
+                    viewUser && 
+                    <div className="user-info" tabIndex="0" onBlur={()=>setViewUser(false)} ref={userInfoCard}>
 
                     </div>
                 }
