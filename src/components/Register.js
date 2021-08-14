@@ -19,8 +19,8 @@ function Register() {
     const redDash = () => history.push('/dashboard')
 
     // register users to collection
-    const registerToDB = (uid, name, picture= null) => usersRef.doc(uid).set({
-        name, picture
+    const registerToDB = (uid, name, email, picture= null) => usersRef.doc(uid).set({
+        name, picture, email
     })
 
     // add premium claim
@@ -45,7 +45,7 @@ function Register() {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
         .then(({ user: {uid, displayName, photoURL, email} }) => {
-            registerToDB(uid, displayName, photoURL)
+            registerToDB(uid, displayName, email, photoURL)
             setPremium(email)
         })
         .then(redDash)
@@ -57,7 +57,7 @@ function Register() {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
         .then(({user: {uid, displayName, photoURL, email}}) => {
-            registerToDB(uid, displayName, photoURL)
+            registerToDB(uid, displayName, email, photoURL)
             setPremium(email)
         })
         .then(redDash)
@@ -90,7 +90,7 @@ function Register() {
         } else {
             auth.createUserWithEmailAndPassword(email, password)
             .then(({ user }) => {
-                registerToDB(user.uid, name)
+                registerToDB(user.uid, name, email)
                 setPremium(email)
             })
             .then(redDash)

@@ -7,7 +7,7 @@ import User from '../../images/user.svg'
 function Header({ userInfo, premium }) {
     const [ viewUser, setViewUser ] = useState(false)
     const { auth } = useSelector(state => state)
-    const { picture, name } = userInfo
+    const { picture, name, email } = userInfo
 
     const handleShowAndHide = (e) => {
         const isAccount = Boolean(e.target.dataset.account)
@@ -32,10 +32,15 @@ function Header({ userInfo, premium }) {
                             <img src={ picture ? picture : User } alt="user profile" data-account='true'/>
                         </div>
                         <p data-account='true'>{name}</p>
+                        <p data-account='true'>{email}</p>
                         <hr data-account='true'/>
                         <div className="btns" data-account='true'>
-                            <Button color="secondary" variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Delete Account</Button>
-                            <Button variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Sign out</Button>
+                            <div>
+                                <Button variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Sign out</Button>
+                            </div>
+                            <div>
+                                <Button color="secondary" variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Delete Account</Button>
+                            </div>
                         </div>
                     </div>
                 }

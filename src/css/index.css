@@ -320,6 +320,16 @@ h3 {
   width: 100%;
   height: 95%;
 }
+.d-header .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.d-header .btns * {
+  font-size: 0.8rem;
+}
 
 body {
   width: 100%;
