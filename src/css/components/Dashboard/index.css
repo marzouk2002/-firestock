@@ -71,6 +71,11 @@ h3 {
   font-weight: 500;
   font-size: 1.1rem;
 }
+.d-header .user-info .email {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #555;
+}
 .d-header .user-info > hr {
   width: 100%;
   margin: 0.5rem 0;

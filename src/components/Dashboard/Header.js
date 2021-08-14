@@ -32,7 +32,7 @@ function Header({ userInfo, premium }) {
                             <img src={ picture ? picture : User } alt="user profile" data-account='true'/>
                         </div>
                         <p data-account='true'>{name}</p>
-                        <p data-account='true'>{email}</p>
+                        <p className="email" data-account='true'>{"ffff"}</p>
                         <hr data-account='true'/>
                         <div className="btns" data-account='true'>
                             <div>
