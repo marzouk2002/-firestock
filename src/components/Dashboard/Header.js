@@ -32,17 +32,11 @@ function Header({ userInfo, premium }) {
                             <img src={ picture ? picture : User } alt="user profile" data-account='true'/>
                         </div>
                         <p data-account='true'>{name}</p>
-                        <Button color="secondary" variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Delete Account</Button>
-
                         <hr data-account='true'/>
-                        {
-                            premium && <>
-                                <p>fff</p>
-                                <hr/>
-                            </>
-
-                        }
-                        <Button variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Sign out</Button>
+                        <div className="btns" data-account='true'>
+                            <Button color="secondary" variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Delete Account</Button>
+                            <Button variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Sign out</Button>
+                        </div>
                     </div>
                 }
             </div>
