@@ -24,7 +24,8 @@ h3 {
   flex: 1 1 100%;
 }
 .container-home header .logo {
-  width: 100px;
+  max-width: 100px;
+  width: 20%;
 }
 .container-home header nav {
   display: flex;
@@ -39,9 +40,10 @@ h3 {
   color: black;
   cursor: pointer;
   margin: 0 10px;
+  font-size: 0.9rem;
   transition: transform ease-in-out 0.3s;
 }
-.container-home header a:hover {
+.container-home header a:hover, .container-home header a:focus {
   transform: scale(1.2);
 }
 .container-home header a:last-child {
@@ -142,7 +144,7 @@ h3 {
   padding-bottom: 0.35rem;
   transition: transform ease-in-out 0.3s;
 }
-.container-home .sec-3 a:hover {
+.container-home .sec-3 a:hover, .container-home .sec-3 a:focus {
   transform: scale(1.2);
 }
 .container-home footer {
@@ -168,7 +170,7 @@ h3 {
   width: 1.7rem;
   transition: transform ease-in-out 0.3s;
 }
-.container-home footer .social-links img:hover {
+.container-home footer .social-links img:hover, .container-home footer .social-links img:focus {
   transform: scale(1.2);
 }
 .container-home footer * {
@@ -228,7 +230,7 @@ h3 {
   cursor: pointer;
   transition: transform ease-in-out 0.3s;
 }
-.regisLoginForm-wrapper main .socials div:hover {
+.regisLoginForm-wrapper main .socials div:hover, .regisLoginForm-wrapper main .socials div:focus {
   transform: scale(1.1);
 }
 .regisLoginForm-wrapper main .socials div svg {
@@ -267,15 +269,15 @@ h3 {
   outline: none;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform ease-in-out 0.3s;
+}
+.d-header .user-logo:hover, .d-header .user-logo:focus {
+  transform: scale(1.2);
 }
 .d-header .user-logo img {
   width: 95%;
   height: 95%;
   border: 50%;
-}
-.d-header .user-logo:hover, .d-header .user-logo:focus {
-  transform: scale(1.2);
 }
 .d-header .user-info {
   position: absolute;
@@ -290,8 +292,9 @@ h3 {
   box-shadow: 1px 1px 5px #555;
   background-color: #eee;
   display: flex;
-  flex-direction: column;
+  justify-content: unset;
   align-items: center;
+  flex-direction: column;
 }
 .d-header .user-info > p {
   font-weight: 500;
@@ -309,6 +312,7 @@ h3 {
   overflow: hidden;
   border: #222 2px solid;
   display: flex;
+  justify-content: unset;
   align-items: flex-end;
   margin-bottom: 0.5rem;
 }

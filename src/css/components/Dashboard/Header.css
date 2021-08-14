@@ -40,15 +40,15 @@ h3 {
   outline: none;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform ease-in-out 0.3s;
+}
+.d-header .user-logo:hover, .d-header .user-logo:focus {
+  transform: scale(1.2);
 }
 .d-header .user-logo img {
   width: 95%;
   height: 95%;
   border: 50%;
-}
-.d-header .user-logo:hover, .d-header .user-logo:focus {
-  transform: scale(1.2);
 }
 .d-header .user-info {
   position: absolute;
@@ -63,8 +63,9 @@ h3 {
   box-shadow: 1px 1px 5px #555;
   background-color: #eee;
   display: flex;
-  flex-direction: column;
+  justify-content: unset;
   align-items: center;
+  flex-direction: column;
 }
 .d-header .user-info > p {
   font-weight: 500;
@@ -82,6 +83,7 @@ h3 {
   overflow: hidden;
   border: #222 2px solid;
   display: flex;
+  justify-content: unset;
   align-items: flex-end;
   margin-bottom: 0.5rem;
 }

@@ -1,11 +1,9 @@
-@use '../../abstracts';
+@use '../../abstracts' as *;
 
 .d-header {
   width: 100%;
   height: 10vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-mix(space-between, center);
   padding: 0 5%;
   z-index: 10;
 
@@ -30,17 +28,12 @@
     outline: none;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    @include hoverScaleEffect;
 
     & img {
       width: 95%;
       height: 95%;
       border: 50%;
-    }
-
-    &:hover,
-    &:focus {
-      transform: scale(1.2);
     }
   }
 
@@ -56,9 +49,8 @@
     padding: 1rem;
     box-shadow: 1px 1px 5px #555;
     background-color: #eee;
-    display: flex;
+    @include flex-mix(unset, center);
     flex-direction: column;
-    align-items: center;
 
     & > p {
       font-weight: 500;
@@ -78,8 +70,7 @@
     border-radius: 50%;
     overflow: hidden;
     border: #222 2px solid;
-    display: flex;
-    align-items: flex-end;
+    @include flex-mix(unset, flex-end);
     margin-bottom: 0.5rem;
 
     & img {

@@ -24,7 +24,8 @@ h3 {
   flex: 1 1 100%;
 }
 .container-home header .logo {
-  width: 100px;
+  max-width: 100px;
+  width: 20%;
 }
 .container-home header nav {
   display: flex;
@@ -39,9 +40,10 @@ h3 {
   color: black;
   cursor: pointer;
   margin: 0 10px;
+  font-size: 0.9rem;
   transition: transform ease-in-out 0.3s;
 }
-.container-home header a:hover {
+.container-home header a:hover, .container-home header a:focus {
   transform: scale(1.2);
 }
 .container-home header a:last-child {
@@ -142,7 +144,7 @@ h3 {
   padding-bottom: 0.35rem;
   transition: transform ease-in-out 0.3s;
 }
-.container-home .sec-3 a:hover {
+.container-home .sec-3 a:hover, .container-home .sec-3 a:focus {
   transform: scale(1.2);
 }
 .container-home footer {
@@ -168,7 +170,7 @@ h3 {
   width: 1.7rem;
   transition: transform ease-in-out 0.3s;
 }
-.container-home footer .social-links img:hover {
+.container-home footer .social-links img:hover, .container-home footer .social-links img:focus {
   transform: scale(1.2);
 }
 .container-home footer * {

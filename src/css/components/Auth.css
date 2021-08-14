@@ -59,7 +59,7 @@ h3 {
   cursor: pointer;
   transition: transform ease-in-out 0.3s;
 }
-.regisLoginForm-wrapper main .socials div:hover {
+.regisLoginForm-wrapper main .socials div:hover, .regisLoginForm-wrapper main .socials div:focus {
   transform: scale(1.1);
 }
 .regisLoginForm-wrapper main .socials div svg {
