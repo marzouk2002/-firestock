@@ -6,9 +6,9 @@ import User from '../../images/user.svg'
 
 function Header({ userInfo, premium }) {
     const [ viewUser, setViewUser ] = useState(false)
-    const { auth, firestore } = useSelector(state => state)
+    const { auth, firestore, firefunc } = useSelector(state => state)
     const usersRef = firestore.collection('users');
-    const { picture, name, email } = userInfo
+    const { picture, name, email, subscriptions } = userInfo
 
     const handleShowAndHide = (e) => {
         const isAccount = Boolean(e.target.dataset.account)
@@ -19,9 +19,16 @@ function Header({ userInfo, premium }) {
         document.body.addEventListener("click", handleShowAndHide)
     }, [])
 
-    const deleteAccount = () => {
-        const { uid } = auth.currentUser
-        console.log(uid)
+    const deleteAccount = async () => {
+        try {
+            const { uid } = auth.currentUser
+            await usersRef.doc(uid).delete()
+            await firefunc.httpsCallable('deleteUser')(uid, subscriptions)
+            auth.signOut()
+        }
+        catch(err) {
+            console.log(err)
+        }
 
     }
 
