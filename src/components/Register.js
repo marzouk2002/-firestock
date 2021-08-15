@@ -28,9 +28,6 @@ function Register() {
     const setPremium = (email) => {
         if(selectedOpt === "Premium") {
             firefunc.httpsCallable('setPremiumAccount')({ email })
-            .then(result => {
-                console.log(result);
-            });
         }
     }
 
