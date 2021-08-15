@@ -8,7 +8,7 @@ function Header({ userInfo, premium }) {
     const [ viewUser, setViewUser ] = useState(false)
     const { auth, firestore, firefunc } = useSelector(state => state)
     const usersRef = firestore.collection('users');
-    const { picture, name, email, subscriptions } = userInfo
+    const { picture, name, email, subscription } = userInfo
 
     const handleShowAndHide = (e) => {
         const isAccount = Boolean(e.target.dataset.account)
@@ -25,7 +25,7 @@ function Header({ userInfo, premium }) {
         try {
             const { uid } = auth.currentUser
             await usersRef.doc(uid).delete()
-            await firefunc.httpsCallable('deleteUser')(uid, subscriptions)
+            await firefunc.httpsCallable('deleteUser')(uid, subscription)
             auth.signOut()
         }
         catch(err) {

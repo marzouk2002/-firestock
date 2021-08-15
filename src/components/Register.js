@@ -11,7 +11,7 @@ function Register() {
     const [ selectedOpt, setSelectedOp ] = useState(null)
     const [ formState, setFormState ] = useState({ name: '', email: '', password: '', password2: ''})
     const [ errState, setErrState ] = useState({ email: '', password: '', password2: '' })
-    const [ subscriptions, setSub] = useState(null)
+    const [ subscription, setSub] = useState(null)
     const { firebase, auth, firestore, firefunc } = useSelector(state => state)
     const usersRef = firestore.collection('users');
     const history = useHistory();
@@ -20,8 +20,8 @@ function Register() {
     const redDash = () => history.push('/dashboard')
 
     // register users to collection
-    const registerToDB = (uid, name, email, subscriptions, picture= null) => usersRef.doc(uid).set({
-        name, picture, email, subscriptions
+    const registerToDB = (uid, name, email, subscription, picture= null) => usersRef.doc(uid).set({
+        name, picture, email, subscription
     })
 
     // add premium claim
@@ -43,7 +43,7 @@ function Register() {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
         .then(({ user: {uid, displayName, photoURL, email} }) => {
-            registerToDB(uid, displayName, email, subscriptions, photoURL)
+            registerToDB(uid, displayName, email, subscription, photoURL)
             setPremium(email)
         })
         .then(redDash)
@@ -55,7 +55,7 @@ function Register() {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
         .then(({user: {uid, displayName, photoURL, email}}) => {
-            registerToDB(uid, displayName, email, subscriptions, photoURL)
+            registerToDB(uid, displayName, email, subscription, photoURL)
             setPremium(email)
         })
         .then(redDash)
@@ -88,7 +88,7 @@ function Register() {
         } else {
             auth.createUserWithEmailAndPassword(email, password)
             .then(({ user }) => {
-                registerToDB(user.uid, name, subscriptions, email)
+                registerToDB(user.uid, name, subscription, email)
                 setPremium(email)
             })
             .then(redDash)
