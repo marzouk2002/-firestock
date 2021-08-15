@@ -11,6 +11,7 @@ function Register() {
     const [ selectedOpt, setSelectedOp ] = useState(null)
     const [ formState, setFormState ] = useState({ name: '', email: '', password: '', password2: ''})
     const [ errState, setErrState ] = useState({ email: '', password: '', password2: '' })
+    const [ subscriptions, setSub] = useState(null)
     const { firebase, auth, firestore, firefunc } = useSelector(state => state)
     const usersRef = firestore.collection('users');
     const history = useHistory();
@@ -19,8 +20,8 @@ function Register() {
     const redDash = () => history.push('/dashboard')
 
     // register users to collection
-    const registerToDB = (uid, name, email, picture= null) => usersRef.doc(uid).set({
-        name, picture, email
+    const registerToDB = (uid, name, email, subscriptions, picture= null) => usersRef.doc(uid).set({
+        name, picture, email, subscriptions
     })
 
     // add premium claim
@@ -45,7 +46,7 @@ function Register() {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
         .then(({ user: {uid, displayName, photoURL, email} }) => {
-            registerToDB(uid, displayName, email, photoURL)
+            registerToDB(uid, displayName, email, subscriptions, photoURL)
             setPremium(email)
         })
         .then(redDash)
@@ -57,7 +58,7 @@ function Register() {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
         .then(({user: {uid, displayName, photoURL, email}}) => {
-            registerToDB(uid, displayName, email, photoURL)
+            registerToDB(uid, displayName, email, subscriptions, photoURL)
             setPremium(email)
         })
         .then(redDash)
@@ -90,7 +91,7 @@ function Register() {
         } else {
             auth.createUserWithEmailAndPassword(email, password)
             .then(({ user }) => {
-                registerToDB(user.uid, name, email)
+                registerToDB(user.uid, name, subscriptions, email)
                 setPremium(email)
             })
             .then(redDash)
@@ -101,7 +102,7 @@ function Register() {
     return (
         <div className="container-auth">
             {
-                !selectedOpt ? <Options  setSelectedOp={setSelectedOp} selectedOpt={selectedOpt}/> : 
+                !selectedOpt ? <Options  setSelectedOp={setSelectedOp} setSub={setSub}/> : 
                 <div className="regisLoginForm-wrapper">
                     <header>
                         <motion.h2 initial={{opacity:0}}
