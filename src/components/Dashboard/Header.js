@@ -20,6 +20,8 @@ function Header({ userInfo, premium }) {
     }, [])
 
     const deleteAccount = async () => {
+        const confirmation = window.confirm('Are you shure')
+        if(!confirmation) return
         try {
             const { uid } = auth.currentUser
             await usersRef.doc(uid).delete()
