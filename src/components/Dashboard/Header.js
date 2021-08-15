@@ -6,7 +6,8 @@ import User from '../../images/user.svg'
 
 function Header({ userInfo, premium }) {
     const [ viewUser, setViewUser ] = useState(false)
-    const { auth } = useSelector(state => state)
+    const { auth, firestore } = useSelector(state => state)
+    const usersRef = firestore.collection('users');
     const { picture, name, email } = userInfo
 
     const handleShowAndHide = (e) => {
@@ -19,7 +20,9 @@ function Header({ userInfo, premium }) {
     }, [])
 
     const deleteAccount = () => {
-        
+        const { uid } = auth.currentUser
+        console.log(uid)
+
     }
 
     return (
@@ -43,7 +46,7 @@ function Header({ userInfo, premium }) {
                                 <Button variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Sign out</Button>
                             </div>
                             <div>
-                                <Button color="secondary" variant="outlined" onClick={()=>auth.signOut()} data-account='true'>Delete Account</Button>
+                                <Button color="secondary" variant="outlined" onClick={deleteAccount} data-account='true'>Delete Account</Button>
                             </div>
                         </div>
                     </div>
