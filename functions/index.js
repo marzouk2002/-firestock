@@ -28,18 +28,13 @@ exports.handlePayment = functions.https.onCall(({ id, email }) => {
       email: email,
       source: id
     })
-    .then(customer => {
-        stripe.subscriptions.create({
+    .then(async customer =>  {
+        return await stripe.subscriptions.create({
           customer: customer.id,
           items: [
             { price: PRICE_ID },
           ],
         });
-    })
-    .then(charge => {
-      return {
-        message: `Success! Subscription created.`
-      }
     })
     .catch(err => err)
 })
