@@ -18,6 +18,10 @@ function Header({ userInfo, premium }) {
         document.body.addEventListener("click", handleShowAndHide)
     }, [])
 
+    const deleteAccount = () => {
+        
+    }
+
     return (
         <header className="d-header">
             <img src={Logo} alt="Logo" className="logo"/>
