@@ -50,7 +50,7 @@ exports.deleteUser = functions.https.onCall(async (uid, subscription) => {
 
     // delete customer from stripe
     await stripe.customers.del(subscription.customer);
-    return subscription
+    return { msg: 'done' }
   }
   catch(err) {
     return err
