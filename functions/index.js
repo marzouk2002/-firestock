@@ -41,6 +41,7 @@ exports.handlePayment = functions.https.onCall(({ id, email }) => {
 
 // delete account
 exports.deleteUser = functions.https.onCall(async (uid, subscription) => {
+  console.log(subscription)
   try {
     // delete user from firebase
     await admin.auth().deleteUser(uid)
@@ -49,7 +50,7 @@ exports.deleteUser = functions.https.onCall(async (uid, subscription) => {
     await stripe.subscriptions.del(subscription.id)
 
     // delete customer from stripe
-    await stripe.customers.del(subscription.customer);
+    return await stripe.customers.del(subscription.customer);
   }
   catch(err) {
     return err

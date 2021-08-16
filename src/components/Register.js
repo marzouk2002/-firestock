@@ -20,14 +20,14 @@ function Register() {
     const redDash = () => history.push('/dashboard')
 
     // register users to collection
-    const registerToDB = (uid, name, email, subscription, picture= null) => usersRef.doc(uid).set({
+    const registerToDB = async (uid, name, email, subscription, picture= null) => usersRef.doc(uid).set({
         name, picture, email, subscription
     })
 
     // add premium claim
-    const setPremium = (email) => {
+    const setPremium = async (email) => {
         if(selectedOpt === "Premium") {
-            firefunc.httpsCallable('setPremiumAccount')({ email })
+            await firefunc.httpsCallable('setPremiumAccount')({ email })
         }
     }
 
@@ -42,9 +42,9 @@ function Register() {
     const signUpWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
-        .then(({ user: {uid, displayName, photoURL, email} }) => {
-            registerToDB(uid, displayName, email, subscription, photoURL)
-            setPremium(email)
+        .then(async ({ user: {uid, displayName, photoURL, email} }) => {
+            await registerToDB(uid, displayName, email, subscription, photoURL)
+            await setPremium(email)
         })
         .then(redDash)
         .catch(error => console.log(error));
@@ -54,9 +54,9 @@ function Register() {
     const signUpWithFacebook = () => {
         const provider = new firebase.auth.FacebookAuthProvider()
         auth.signInWithPopup(provider)
-        .then(({user: {uid, displayName, photoURL, email}}) => {
-            registerToDB(uid, displayName, email, subscription, photoURL)
-            setPremium(email)
+        .then(async ({user: {uid, displayName, photoURL, email}}) => {
+            await registerToDB(uid, displayName, email, subscription, photoURL)
+            await setPremium(email)
         })
         .then(redDash)
         .catch(error => console.log(error));
@@ -87,9 +87,9 @@ function Register() {
             return setErrState(objErr)
         } else {
             auth.createUserWithEmailAndPassword(email, password)
-            .then(({ user }) => {
-                registerToDB(user.uid, name, subscription, email)
-                setPremium(email)
+            .then(async ({ user }) => {
+                await registerToDB(user.uid, name, subscription, email)
+                await setPremium(email)
             })
             .then(redDash)
             .catch(error => console.log(error));

@@ -25,7 +25,7 @@ function Header({ userInfo, premium }) {
         try {
             const { uid } = auth.currentUser
             await usersRef.doc(uid).delete()
-            await firefunc.httpsCallable('deleteUser')(uid, subscription)
+            console.log(await firefunc.httpsCallable('deleteUser')(uid, subscription))
             auth.signOut()
         }
         catch(err) {
