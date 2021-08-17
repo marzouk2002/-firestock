@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion'
 import Options from './layout/Options'
-import { useHistory } from "react-router-dom";
+import Loader from './HOC/Loader';
 import { TextField, Button } from '@material-ui/core';
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
 
@@ -145,4 +145,4 @@ const inputStyle = {
     margin: '0.5rem 0'
 }
 
-export default Register
+export default Loader(Register)

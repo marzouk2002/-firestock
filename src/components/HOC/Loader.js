@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function Loader(WrappedComponent) {
-    const [ loading, setLoader ] = useState(false)
+    return class wrapperClass extends React.Component {
+        constructor(props) {
+            super(props)
+            this.state = {loading: true}
+        }
 
-    return (
-        <>
-            {loading && <div className="loader"></div>} 
-            <WrappedComponent setLoader={setLoader}/>
-        </>
-    )
+        render() {
+            return (
+                <>
+                    {this.state.loading && <div className="loader">jjjj</div>} 
+                    <WrappedComponent/>
+                </>
+            )
+        }
+
+    }
+    
 }
 
 export default Loader
