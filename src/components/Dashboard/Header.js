@@ -17,7 +17,6 @@ function Header({ setLoading, userInfo }) {
     }
 
     useEffect(() => {
-        setLoading(true)
         document.body.addEventListener("click", handleShowAndHide)
     }, [])
 
@@ -26,16 +25,14 @@ function Header({ setLoading, userInfo }) {
         if(!confirmation) return
         try {
             const { uid } = auth.currentUser
+            setLoading(true)
             firefunc.httpsCallable('deleteUser')(uid, {...subscription}).then((res) => {
                 setLoading(false)
                 auth.signOut()
             })
             await usersRef.doc(uid).delete()
         }
-        catch(err) {
-            console.log(err)
-        }
-
+        catch(err) {console.log(err)}
     }
 
     return (
