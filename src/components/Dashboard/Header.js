@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Button } from '@material-ui/core';
+import Loader from '../HOC/Loader';
 import Logo from '../../images/logo.svg'
 import User from '../../images/user.svg'
 
-function Header({ userInfo, premium }) {
+function Header({ setLoading, userInfo }) {
     const [ viewUser, setViewUser ] = useState(false)
     const { auth, firestore, firefunc } = useSelector(state => state)
     const usersRef = firestore.collection('users');
@@ -16,17 +17,17 @@ function Header({ userInfo, premium }) {
     }
 
     useEffect(() => {
+        setLoading(true)
         document.body.addEventListener("click", handleShowAndHide)
     }, [])
 
     const deleteAccount = async () => {
         const confirmation = window.confirm('Are you shure')
-        console.log(subscription)
         if(!confirmation) return
         try {
             const { uid } = auth.currentUser
             firefunc.httpsCallable('deleteUser')(uid, {...subscription}).then((res) => {
-                console.log(res.data)
+                setLoading(false)
                 auth.signOut()
             })
             await usersRef.doc(uid).delete()
@@ -68,4 +69,4 @@ function Header({ userInfo, premium }) {
     )
 }
 
-export default Header
+export default Loader(Header)

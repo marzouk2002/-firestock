@@ -19,7 +19,7 @@ function Loader(WrappedComponent) {
                         <div className="loader-container">
                             <div className="loader"></div>
                         </div>}
-                    <WrappedComponent setLoading={this.setLoading}/>
+                    <WrappedComponent setLoading={this.setLoading} {...this.props}/>
                 </>
             )
         }
