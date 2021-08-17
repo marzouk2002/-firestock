@@ -7,7 +7,7 @@ import Loader from './HOC/Loader';
 import { TextField, Button } from '@material-ui/core';
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
 
-function Register() {
+function Register({ setLoading }) {
     const [ selectedOpt, setSelectedOp ] = useState(null)
     const [ formState, setFormState ] = useState({ name: '', email: '', password: '', password2: ''})
     const [ errState, setErrState ] = useState({ email: '', password: '', password2: '' })
@@ -41,11 +41,13 @@ function Register() {
     // with google
     const signUpWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
+        setLoading(true)
         auth.signInWithPopup(provider)
         .then(async ({ user: {uid, displayName, photoURL, email} }) => {
             await registerToDB(uid, displayName, email, subscription, photoURL)
             await setPremium(email)
         })
+        .then(()=>setLoading(false))
         .then(redDash)
         .catch(error => console.log(error));
     }
@@ -53,11 +55,13 @@ function Register() {
     // with facebook
     const signUpWithFacebook = () => {
         const provider = new firebase.auth.FacebookAuthProvider()
+        setLoading(true)
         auth.signInWithPopup(provider)
         .then(async ({user: {uid, displayName, photoURL, email}}) => {
             await registerToDB(uid, displayName, email, subscription, photoURL)
             await setPremium(email)
         })
+        .then(() => setLoading(false))
         .then(redDash)
         .catch(error => console.log(error));
     }
@@ -86,11 +90,13 @@ function Register() {
         if(errBool) {
             return setErrState(objErr)
         } else {
+            setLoading(true)
             auth.createUserWithEmailAndPassword(email, password)
             .then(async ({ user }) => {
                 await registerToDB(user.uid, name, subscription, email)
                 await setPremium(email)
             })
+            .then(()=>setLoading(false))
             .then(redDash)
             .catch(error => console.log(error));
         }
@@ -99,7 +105,7 @@ function Register() {
     return (
         <div className="container-auth">
             {
-                !selectedOpt ? <Options  setSelectedOp={setSelectedOp} setSub={setSub}/> : 
+                !selectedOpt ? <Options setLoading={setLoading}  setSelectedOp={setSelectedOp} setSub={setSub}/> : 
                 <div className="regisLoginForm-wrapper">
                     <header>
                         <motion.h2 initial={{opacity:0}}

@@ -4,7 +4,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import { motion } from 'framer-motion'
 import Logo from '../../images/logo.png'
 
-function Options({setSelectedOp, setSub}) {
+function Options({setSelectedOp, setSub, setLoading}) {
     const [ anim, setAnim ] = useState({})
     const { firefunc } = useSelector(state => state)
     
@@ -16,9 +16,11 @@ function Options({setSelectedOp, setSub}) {
     }
 
     const onToken = (token) => {
+        setLoading(true)
         firefunc.httpsCallable("handlePayment")(token)
         .then(({ data: { id, customer }}) => {
             setSub({ id, customer })
+            setLoading(false)
             setAnim({ scale: 0.5, opacity:0 })
             setTimeout(()=>setSelectedOp("Premium"), 300) 
         })

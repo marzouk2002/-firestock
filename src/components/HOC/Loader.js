@@ -4,7 +4,7 @@ function Loader(WrappedComponent) {
     return class wrapperClass extends React.Component {
         constructor(props) {
             super(props)
-            this.state = {loading: true}
+            this.state = {loading: false}
             this.setLoading = this.setLoading.bind(this)
         }
 
