@@ -8,10 +8,9 @@
 }
 
 /* Static Shape */
-
 .loader:before {
   position: absolute;
-  content: '';
+  content: "";
   top: 0%;
   left: 50%;
   width: 100%;
@@ -21,10 +20,9 @@
 }
 
 /* Active Shape */
-
 .loader:after {
   position: absolute;
-  content: '';
+  content: "";
   top: 0%;
   left: 50%;
   width: 100%;
@@ -39,34 +37,31 @@
 }
 
 /* Active Animation */
-
 @-webkit-keyframes loader {
   from {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
-
 @keyframes loader {
   from {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
-
 .loader:before,
 .loader:after {
   width: 2.28571429rem;
   height: 2.28571429rem;
   margin: 0em;
 }
+
+/*# sourceMappingURL=Loader.css.map */
