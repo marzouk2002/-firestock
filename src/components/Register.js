@@ -41,9 +41,9 @@ function Register({ setLoading }) {
     // with google
     const signUpWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
-        setLoading(true)
         auth.signInWithPopup(provider)
         .then(async ({ user: {uid, displayName, photoURL, email} }) => {
+            setLoading(true)
             await registerToDB(uid, displayName, email, subscription, photoURL)
             await setPremium(email)
         })
@@ -55,9 +55,9 @@ function Register({ setLoading }) {
     // with facebook
     const signUpWithFacebook = () => {
         const provider = new firebase.auth.FacebookAuthProvider()
-        setLoading(true)
         auth.signInWithPopup(provider)
         .then(async ({user: {uid, displayName, photoURL, email}}) => {
+            setLoading(true)
             await registerToDB(uid, displayName, email, subscription, photoURL)
             await setPremium(email)
         })
@@ -90,9 +90,9 @@ function Register({ setLoading }) {
         if(errBool) {
             return setErrState(objErr)
         } else {
-            setLoading(true)
             auth.createUserWithEmailAndPassword(email, password)
             .then(async ({ user }) => {
+                setLoading(true)
                 await registerToDB(user.uid, name, subscription, email)
                 await setPremium(email)
             })
