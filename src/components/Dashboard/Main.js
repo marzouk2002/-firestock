@@ -2,9 +2,9 @@ import React from 'react'
 
 function Main() {
     return (
-        <Main>
+        <main className='d-main'>
             
-        </Main>
+        </main>
     )
 }
 

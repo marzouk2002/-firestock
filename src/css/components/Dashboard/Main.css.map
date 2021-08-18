@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"Main.css"}
+{"version":3,"sourceRoot":"","sources":["../../../scss/abstracts/_typography.scss","../../../scss/components/Dashboard/Main.scss"],"names":[],"mappings":"AAAQ;AAQR;EACE;EACA,WARS;;;AAWX;EACE,WAXS;;;AAcX;EACE,WAdS;;;ACFX;EACE","file":"Main.css"}

@@ -336,8 +336,17 @@ h3 {
   font-size: 0.8rem;
 }
 
+.d-main {
+  flex: 1 1 100%;
+}
+
 body {
   width: 100%;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
 }
 
 .loader-container {
