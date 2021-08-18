@@ -42,7 +42,7 @@
     background-position: bottom right 5%;
 
     .content {
-      margin: 0 10%;
+      margin: 0 6%;
       padding-top: 6%;
     }
 
@@ -63,7 +63,7 @@
   }
 
   .sec-2 {
-    margin: 0 10%;
+    margin: 0 6%;
     padding: calc(0.6% + 1vmin) 0;
     @include flex-mix(space-between);
 
@@ -101,7 +101,7 @@
 
     .content {
       padding: 0 15%;
-      margin: 3%;
+      margin: 6%;
       margin-top: 7%;
       text-align: center;
       font-size: 1.2rem;

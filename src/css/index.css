@@ -56,7 +56,7 @@ h3 {
   background-position: bottom right 5%;
 }
 .container-home .sec-1 .content {
-  margin: 0 10%;
+  margin: 0 6%;
   padding-top: 6%;
 }
 .container-home .sec-1 h3 {
@@ -78,7 +78,7 @@ h3 {
   letter-spacing: 2px;
 }
 .container-home .sec-2 {
-  margin: 0 10%;
+  margin: 0 6%;
   padding: calc(0.6% + 1vmin) 0;
   display: flex;
   justify-content: space-between;
@@ -119,7 +119,7 @@ h3 {
 }
 .container-home .sec-3 .content {
   padding: 0 15%;
-  margin: 3%;
+  margin: 6%;
   margin-top: 7%;
   text-align: center;
   font-size: 1.2rem;
