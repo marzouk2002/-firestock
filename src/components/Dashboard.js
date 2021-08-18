@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useHistory } from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Header from './Dashboard/Header';
+import Main from './Dashboard/Main';
 
 function Dashboard() {
     const { firebase, auth, firestore } = useSelector(state => state)
@@ -27,6 +28,7 @@ function Dashboard() {
             {!user ? history.push('/login') : 
             <>
                 <Header userInfo={userInfo} premium={isPremium}/>
+                <Main/>
             </>}
         </>
     )
