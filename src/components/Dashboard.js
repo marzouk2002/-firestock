@@ -26,10 +26,10 @@ function Dashboard() {
     return (
         <>
             {!user ? history.push('/login') : 
-            <>
+            <div className="dashboard">
                 <Header userInfo={userInfo} premium={isPremium}/>
                 <Main/>
-            </>}
+            </div>}
         </>
     )
 }
